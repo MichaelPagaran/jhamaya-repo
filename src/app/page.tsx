@@ -1,10 +1,28 @@
-import { HeroSection, AboutSection } from "@/components/sections";
+import {
+  HeroSection,
+  MarqueeSection,
+  ProjectsSection,
+  ProcessSection,
+  CTASection,
+} from "@/components/sections";
+import { Navbar } from "@/components/layout";
+import { Footer } from "@/components/layout";
+import { getAllProjects } from "@/lib/projects";
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getAllProjects();
+
   return (
-    <main className="mx-auto max-w-5xl px-6">
-      <HeroSection />
-      <AboutSection />
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <HeroSection />
+        <MarqueeSection />
+        <ProjectsSection projects={projects} />
+        <ProcessSection />
+        <CTASection />
+      </main>
+      <Footer />
+    </>
   );
 }

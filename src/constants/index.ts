@@ -1,13 +1,32 @@
 import { NavLink } from "@/types";
 
 export const SITE_META = {
-    name: "Portfolio",
-    description: "A portfolio showcasing my work and experience.",
+    name: "Designer Portfolio",
+    description:
+        "Bringing clarity to technical products through design. Specializing in security, data, and enterprise products.",
     url: "https://yourportfolio.com",
 } as const;
 
 export const NAV_LINKS: NavLink[] = [
     { label: "Home", href: "/" },
-    { label: "Projects", href: "/projects" },
-    { label: "About", href: "/#about" },
+    { label: "Projects", href: "#projects" },
+    { label: "Journal", href: "#journal" },
+    { label: "About Me", href: "#about" },
 ];
+
+export const SOCIAL_LINKS = [
+    { label: "LinkedIn", href: "#" },
+    { label: "Dribbble", href: "#" },
+    { label: "Twitter", href: "#" },
+] as const;
+
+export const MARQUEE_ITEMS = [
+    "UX Design",
+    "Product Design",
+    "Design Systems",
+    "User Research",
+    "Interaction Design",
+    "Prototyping",
+    "Figma",
+    "Usability Testing",
+] as const;

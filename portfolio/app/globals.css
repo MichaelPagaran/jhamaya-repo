@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900;1,9..40,300&family=Bebas+Neue&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #faf9f6;
+  --fg: #1e1c1a;
+  --accent: #2a5cff;
+  --accent-glow: rgba(42,92,255,0.15);
+  --muted: #a09e96;
+  --muted2: #c8c5bc;
+  --card-bg: #f0ede8;
+  --card-hover: #242220;
+  --border: #e2dfd8;
+  --surface: #f5f2ed;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; cursor: none; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.cursor {
+  position: fixed; top: 0; left: 0;
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .2s ease, height .2s ease, opacity .2s ease;
+}
+.cursor-ring {
+  position: fixed; top: 0; left: 0;
+  width: 34px; height: 34px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all .15s ease;
+  opacity: 0.45;
+}
+.cursor.hovering { width: 40px; height: 40px; opacity: .12; }
+.cursor-ring.hovering { opacity: 0; }
+
+.display { font-family: 'Bebas Neue', sans-serif; letter-spacing: .01em; }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.anim { opacity: 0; }
+.anim.visible { animation: fadeUp .7s ease forwards; }
+.d1 { animation-delay: .05s; }
+.d2 { animation-delay: .15s; }
+.d3 { animation-delay: .25s; }
+.d4 { animation-delay: .35s; }
+.d5 { animation-delay: .45s; }
+.d6 { animation-delay: .55s; }
