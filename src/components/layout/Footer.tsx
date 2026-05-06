@@ -10,7 +10,7 @@ export default function Footer() {
     return (
         <footer
             style={{
-                padding: "36px 52px",
+                padding: "2.25rem 3.25rem",
                 borderTop: "1px solid var(--border)",
                 display: "flex",
                 justifyContent: "space-between",
@@ -19,7 +19,7 @@ export default function Footer() {
         >
             <span
                 style={{
-                    fontSize: "13px",
+                    fontSize: "0.8125rem",
                     color: "var(--muted)",
                     fontFamily: "'DM Sans', sans-serif",
                 }}
@@ -28,7 +28,7 @@ export default function Footer() {
                 reserved.
             </span>
 
-            <div style={{ display: "flex", gap: "24px" }}>
+            <div style={{ display: "flex", gap: "1.5rem" }}>
                 {SOCIAL_LINKS.map((link) => (
                     <a
                         key={link.label}
@@ -36,7 +36,7 @@ export default function Footer() {
                         target={link.href.startsWith("http") ? "_blank" : "_self"}
                         rel={link.href.startsWith("http") ? "noopener noreferrer" : ""}
                         style={{
-                            fontSize: "13px",
+                            fontSize: "0.8125rem",
                             color: "var(--muted)",
                             textDecoration: "none",
                             fontFamily: "'DM Sans', sans-serif",

@@ -8,7 +8,7 @@ export default function CTASection() {
     return (
         <section
             style={{
-                padding: "140px 52px",
+                padding: "8.75rem 3.25rem",
                 textAlign: "center",
                 position: "relative",
                 overflow: "hidden",
@@ -21,8 +21,8 @@ export default function CTASection() {
                     top: "50%",
                     left: "50%",
                     transform: "translate(-50%,-50%)",
-                    width: "700px",
-                    height: "700px",
+                    width: "43.75rem",
+                    height: "43.75rem",
                     background:
                         "radial-gradient(circle, var(--accent-glow) 0%, transparent 68%)",
                     pointerEvents: "none",
@@ -32,12 +32,12 @@ export default function CTASection() {
             <p
                 className="anim d1"
                 style={{
-                    fontSize: "10px",
+                    fontSize: "0.625rem",
                     fontWeight: 700,
                     letterSpacing: "0.18em",
                     textTransform: "uppercase",
                     color: "var(--muted)",
-                    marginBottom: "20px",
+                    marginBottom: "1.25rem",
                     fontFamily: "'DM Sans', sans-serif",
                 }}
             >
@@ -47,9 +47,9 @@ export default function CTASection() {
             <h2
                 className="display anim d2"
                 style={{
-                    fontSize: "clamp(52px, 8.5vw, 112px)",
+                    fontSize: "clamp(3.25rem, 8.5vw, 7rem)",
                     lineHeight: 0.93,
-                    marginBottom: "48px",
+                    marginBottom: "3rem",
                     fontWeight: "bold",
                 }}
             >
@@ -61,12 +61,12 @@ export default function CTASection() {
             <button
                 className="anim d3"
                 style={{
-                    padding: "18px 52px",
+                    padding: "1.125rem 3.25rem",
                     background: "var(--fg)",
                     color: "var(--bg)",
                     border: "none",
                     borderRadius: "100px",
-                    fontSize: "15px",
+                    fontSize: "0.9375rem",
                     fontWeight: 600,
                     fontFamily: "'DM Sans', sans-serif",
                     letterSpacing: "0.01em",
@@ -76,7 +76,7 @@ export default function CTASection() {
                     const el = e.currentTarget as HTMLElement;
                     el.style.background = "var(--accent)";
                     el.style.transform = "scale(1.03)";
-                    el.style.boxShadow = "0 12px 32px rgba(42,92,255,0.25)";
+                    el.style.boxShadow = "0 0.75rem 2rem rgba(42,92,255,0.25)";
                 }}
                 onMouseLeave={(e) => {
                     const el = e.currentTarget as HTMLElement;

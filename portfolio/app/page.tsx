@@ -114,34 +114,34 @@ export default function Home() {
       {/* NAV */}
       <header style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        padding: "14px 52px",
+        padding: "0.875rem 3.25rem",
         display: "flex", alignItems: "center", justifyContent: "space-between",
         background: scrolled ? "rgba(250,249,246,0.96)" : "rgba(250,249,246,0.88)",
-        backdropFilter: "blur(14px)",
+        backdropFilter: "blur(0.875rem)",
         borderBottom: `1px solid ${scrolled ? s.border : "transparent"}`,
-        boxShadow: scrolled ? "0 2px 24px rgba(30,28,26,0.07)" : "none",
+        boxShadow: scrolled ? "0 0.125rem 1.5rem rgba(30,28,26,0.07)" : "none",
         transition: "background .3s ease, border-bottom .3s ease, box-shadow .3s ease",
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
           <div style={{
-            width: "32px", height: "32px", background: s.accent,
-            borderRadius: "8px", display: "flex", alignItems: "center",
-            justifyContent: "center", fontWeight: 900, color: "#fff", fontSize: "14px",
+            width: "2rem", height: "2rem", background: s.accent,
+            borderRadius: "0.5rem", display: "flex", alignItems: "center",
+            justifyContent: "center", fontWeight: 900, color: "#fff", fontSize: "0.875rem",
             fontFamily: "'DM Sans', sans-serif",
           }}>J</div>
           <nav style={{
-            display: "flex", gap: "2px",
-            background: s.surface, borderRadius: "100px", padding: "4px",
+            display: "flex", gap: "0.125rem",
+            background: s.surface, borderRadius: "6.25rem", padding: "0.25rem",
           }}>
             {navItems.map((item) => (
               <button key={item} onClick={() => setActiveNav(item)} style={{
-                padding: "6px 18px", borderRadius: "100px", border: "none",
+                padding: "0.375rem 1.125rem", borderRadius: "6.25rem", border: "none",
                 background: activeNav === item ? s.white : "transparent",
                 color: activeNav === item ? s.fg : s.muted,
-                fontSize: "13px",
+                fontSize: "0.8125rem",
                 fontWeight: activeNav === item ? 600 : 400,
                 fontFamily: "'DM Sans', sans-serif",
-                boxShadow: activeNav === item ? "0 1px 4px rgba(30,28,26,0.07)" : "none",
+                boxShadow: activeNav === item ? "0 0.0625rem 0.25rem rgba(30,28,26,0.07)" : "none",
                 transition: "all .2s ease",
               }}>{item}</button>
             ))}
@@ -149,8 +149,8 @@ export default function Home() {
         </div>
         <button
           style={{
-            padding: "10px 24px", background: s.fg, color: s.bg,
-            border: "none", borderRadius: "100px", fontSize: "13px",
+            padding: "0.625rem 1.5rem", background: s.fg, color: s.bg,
+            border: "none", borderRadius: "6.25rem", fontSize: "0.8125rem",
             fontWeight: 600, fontFamily: "'DM Sans', sans-serif",
             letterSpacing: "0.01em", transition: "background .2s ease",
           }}
@@ -163,21 +163,21 @@ export default function Home() {
         {/* HERO */}
         <section style={{
           minHeight: "100vh", display: "flex", flexDirection: "column",
-          justifyContent: "flex-end", padding: "0 52px 88px", paddingTop: "100px",
+          justifyContent: "flex-end", padding: "0 3.25rem 5.5rem", paddingTop: "6.25rem",
           position: "relative", overflow: "hidden",
         }}>
           {/* Soft radial glow */}
           <div style={{
             position: "absolute", top: "30%", left: "55%",
-            width: "700px", height: "700px",
+            width: "43.75rem", height: "43.75rem",
             background: `radial-gradient(circle, ${s.accentGlow} 0%, transparent 65%)`,
             pointerEvents: "none", transform: "translate(-50%,-50%)",
           }} />
           {/* Ghost watermark */}
           <div className="display" style={{
-            position: "absolute", top: "50%", right: "-60px",
+            position: "absolute", top: "50%", right: "-3.75rem",
             transform: "translateY(-52%)",
-            fontSize: "clamp(180px, 30vw, 420px)",
+            fontSize: "clamp(11.25rem, 30vw, 26.25rem)",
             color: "transparent",
             WebkitTextStroke: `1px ${s.border}`,
             lineHeight: 1, pointerEvents: "none", userSelect: "none",
@@ -185,21 +185,21 @@ export default function Home() {
           {/* Blue dot */}
           <div style={{
             position: "absolute", top: "22%", right: "25%",
-            width: "9px", height: "9px",
+            width: "0.5625rem", height: "0.5625rem",
             background: s.accent, borderRadius: "50%",
-            boxShadow: `0 0 16px ${s.accentGlow}`,
+            boxShadow: `0 0 1rem ${s.accentGlow}`,
           }} />
 
-          <div style={{ position: "relative", zIndex: 1, maxWidth: "860px" }}>
+          <div style={{ position: "relative", zIndex: 1, maxWidth: "53.75rem" }}>
             <p className="anim d1" style={{
-              fontSize: "11px", fontWeight: 700,
+              fontSize: "0.6875rem", fontWeight: 700,
               letterSpacing: "0.16em", textTransform: "uppercase",
-              color: s.accent, marginBottom: "24px",
+              color: s.accent, marginBottom: "1.5rem",
             }}>Product Designer — Available for work</p>
 
             <h1 className="display anim d2" style={{
-              fontSize: "clamp(60px, 9.5vw, 130px)",
-              lineHeight: 0.93, letterSpacing: "-0.01em", marginBottom: "32px",
+              fontSize: "clamp(3.75rem, 9.5vw, 8.125rem)",
+              lineHeight: 0.93, letterSpacing: "-0.01em", marginBottom: "2rem",
             }}>
               Bringing{" "}
               <span style={{ color: s.accent }}>clarity</span>
@@ -210,20 +210,20 @@ export default function Home() {
             </h1>
 
             <p className="anim d3" style={{
-              fontSize: "18px", color: s.muted,
-              maxWidth: "460px", lineHeight: 1.75,
+              fontSize: "1.125rem", color: s.muted,
+              maxWidth: "28.75rem", lineHeight: 1.75,
             }}>Designing the interfaces that make highly technical software easy to use. Focused on security systems, data tools, and enterprise products.</p>
 
-            <div className="anim d4" style={{ display: "flex", gap: "14px", marginTop: "44px" }}>
+            <div className="anim d4" style={{ display: "flex", gap: "0.875rem", marginTop: "2.75rem" }}>
               <button style={{
-                padding: "14px 34px", background: s.accent, color: "#fff",
-                border: "none", borderRadius: "100px", fontSize: "14px",
+                padding: "0.875rem 2.125rem", background: s.accent, color: "#fff",
+                border: "none", borderRadius: "6.25rem", fontSize: "0.875rem",
                 fontWeight: 600, fontFamily: "'DM Sans', sans-serif",
                 transition: "transform .15s ease, box-shadow .15s ease",
               }}
                 onMouseEnter={(e) => {
-                  (e.target as HTMLElement).style.transform = "translateY(-2px)";
-                  (e.target as HTMLElement).style.boxShadow = `0 10px 28px rgba(42,92,255,0.28)`;
+                  (e.target as HTMLElement).style.transform = "translateY(-0.125rem)";
+                  (e.target as HTMLElement).style.boxShadow = `0 0.625rem 1.75rem rgba(42,92,255,0.28)`;
                 }}
                 onMouseLeave={(e) => {
                   (e.target as HTMLElement).style.transform = "translateY(0)";
@@ -231,9 +231,9 @@ export default function Home() {
                 }}
               >View Projects →</button>
               <button style={{
-                padding: "14px 34px", background: "transparent",
+                padding: "0.875rem 2.125rem", background: "transparent",
                 color: s.fg, border: `1.5px solid ${s.border}`,
-                borderRadius: "100px", fontSize: "14px",
+                borderRadius: "6.25rem", fontSize: "0.875rem",
                 fontWeight: 500, fontFamily: "'DM Sans', sans-serif",
                 transition: "border-color .2s ease",
               }}
@@ -245,11 +245,11 @@ export default function Home() {
 
           {/* Scroll indicator */}
           <div className="anim d5" style={{
-            position: "absolute", bottom: "44px", right: "52px",
-            display: "flex", flexDirection: "column", alignItems: "center", gap: "8px",
+            position: "absolute", bottom: "2.75rem", right: "3.25rem",
+            display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem",
           }}>
-            <span style={{ fontSize: "10px", color: s.muted2, letterSpacing: "0.1em", textTransform: "uppercase" }}>Scroll</span>
-            <div style={{ width: "1px", height: "48px", background: `linear-gradient(to bottom, ${s.muted2}, transparent)` }} />
+            <span style={{ fontSize: "0.625rem", color: s.muted2, letterSpacing: "0.1em", textTransform: "uppercase" }}>Scroll</span>
+            <div style={{ width: "1px", height: "3rem", background: `linear-gradient(to bottom, ${s.muted2}, transparent)` }} />
           </div>
         </section>
 
@@ -257,17 +257,17 @@ export default function Home() {
         <div style={{
           borderTop: `1px solid ${s.border}`,
           borderBottom: `1px solid ${s.border}`,
-          padding: "14px 0", overflow: "hidden",
+          padding: "0.875rem 0", overflow: "hidden",
           background: s.cardHover,
         }}>
           <div style={{
-            display: "flex", gap: "48px",
+            display: "flex", gap: "3rem",
             animation: "marquee 20s linear infinite",
             whiteSpace: "nowrap",
           }}>
             {[...marqueeItems, ...marqueeItems].map((item, i) => (
               <span key={i} style={{
-                fontSize: "11px", fontWeight: 600,
+                fontSize: "0.6875rem", fontWeight: 600,
                 color: i % 3 === 0 ? s.accent : "rgba(250,249,246,0.7)",
                 letterSpacing: "0.07em", textTransform: "uppercase", flexShrink: 0,
               }}>{item} ✦</span>
@@ -276,28 +276,28 @@ export default function Home() {
         </div>
 
         {/* PROJECTS */}
-        <section style={{ padding: "120px 52px" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "64px" }}>
+        <section style={{ padding: "7.5rem 3.25rem" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "4rem" }}>
             <div>
               <p className="anim d1" style={{
-                fontSize: "10px", fontWeight: 700, letterSpacing: "0.18em",
-                textTransform: "uppercase", color: s.muted, marginBottom: "12px",
+                fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.18em",
+                textTransform: "uppercase", color: s.muted, marginBottom: "0.75rem",
               }}>Selected Work</p>
-              <h2 className="display anim d2" style={{ fontSize: "clamp(44px, 5.5vw, 80px)", lineHeight: 0.93, fontWeight: "bold" }}>
+              <h2 className="display anim d2" style={{ fontSize: "clamp(2.75rem, 5.5vw, 5rem)", lineHeight: 0.93, fontWeight: "bold" }}>
                 Projects I've <br /><span style={{ color: s.accent }}>Led & Designed</span>
               </h2>
             </div>
-            <span className="anim d3" style={{ fontSize: "12px", color: s.muted, fontWeight: 500, paddingBottom: "6px", }}>
+            <span className="anim d3" style={{ fontSize: "0.75rem", color: s.muted, fontWeight: 500, paddingBottom: "0.375rem", }}>
               0{projects.length} cases
             </span>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "10px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.625rem" }}>
             {projects.slice(0, 3).map((p, i) => (
               <ProjectCard key={p.id} project={p} index={i} />
             ))}
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "10px", marginTop: "10px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0.625rem", marginTop: "0.625rem" }}>
             {projects.slice(3).map((p, i) => (
               <ProjectCard key={p.id} project={p} index={i + 3} wide />
             ))}
@@ -305,15 +305,15 @@ export default function Home() {
         </section>
 
         {/* PROCESS */}
-        <section style={{ padding: "120px 52px", background: s.cardHover }}>
-          <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        <section style={{ padding: "7.5rem 3.25rem", background: s.cardHover }}>
+          <div style={{ maxWidth: "75rem", margin: "0 auto" }}>
             <p className="anim d1" style={{
-              fontSize: "10px", fontWeight: 700, letterSpacing: "0.18em",
-              textTransform: "uppercase", color: s.accent, marginBottom: "12px",
+              fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.18em",
+              textTransform: "uppercase", color: s.accent, marginBottom: "0.75rem",
             }}>Process</p>
             <h2 className="display anim d2" style={{
-              fontSize: "clamp(44px, 5.5vw, 80px)", lineHeight: 0.93,
-              color: s.bg, marginBottom: "72px",
+              fontSize: "clamp(2.75rem, 5.5vw, 5rem)", lineHeight: 0.93,
+              color: s.bg, marginBottom: "4.5rem",
             }}>
               How{" "}
               <span style={{ WebkitTextStroke: `1.5px ${s.bg}`, color: "transparent" }}>Ideas</span>
@@ -327,7 +327,7 @@ export default function Home() {
                 { num: "04", title: "Deliver", desc: "Collaborating with engineers, validating with users, and shipping with impact." },
               ].map((step, i) => (
                 <div key={step.num} className={`anim d${i + 1}`} data-hover="true" style={{
-                  padding: "40px 28px",
+                  padding: "2.5rem 1.75rem",
                   borderLeft: "1px solid rgba(250,249,246,0.08)",
                   transition: "background .2s ease",
                 }}
@@ -335,11 +335,11 @@ export default function Home() {
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent"; }}
                 >
                   <div className="display" style={{
-                    fontSize: "64px", color: s.accent,
-                    opacity: 0.35, lineHeight: 1, marginBottom: "20px",
+                    fontSize: "4rem", color: s.accent,
+                    opacity: 0.35, lineHeight: 1, marginBottom: "1.25rem",
                   }}>{step.num}</div>
-                  <h3 style={{ fontSize: "18px", fontWeight: 700, color: s.bg, marginBottom: "10px" }}>{step.title}</h3>
-                  <p style={{ fontSize: "14px", color: "rgba(250,249,246,0.42)", lineHeight: 1.72 }}>{step.desc}</p>
+                  <h3 style={{ fontSize: "1.125rem", fontWeight: 700, color: s.bg, marginBottom: "0.625rem" }}>{step.title}</h3>
+                  <p style={{ fontSize: "0.875rem", color: "rgba(250,249,246,0.42)", lineHeight: 1.72 }}>{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -347,33 +347,33 @@ export default function Home() {
         </section>
 
         {/* CTA */}
-        <section style={{ padding: "140px 52px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+        <section style={{ padding: "8.75rem 3.25rem", textAlign: "center", position: "relative", overflow: "hidden" }}>
           <div style={{
             position: "absolute", top: "50%", left: "50%",
-            transform: "translate(-50%,-50%)", width: "700px", height: "700px",
+            transform: "translate(-50%,-50%)", width: "43.75rem", height: "43.75rem",
             background: `radial-gradient(circle, ${s.accentGlow} 0%, transparent 68%)`,
             pointerEvents: "none",
           }} />
           <p className="anim d1" style={{
-            fontSize: "10px", fontWeight: 700, letterSpacing: "0.18em",
-            textTransform: "uppercase", color: s.muted, marginBottom: "20px",
+            fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.18em",
+            textTransform: "uppercase", color: s.muted, marginBottom: "1.25rem",
           }}>Let's Work Together</p>
           <h2 className="display anim d2" style={{
-            fontSize: "clamp(52px, 8.5vw, 112px)", lineHeight: 0.93, marginBottom: "48px",
+            fontSize: "clamp(3.25rem, 8.5vw, 7rem)", lineHeight: 0.93, marginBottom: "3rem",
           }}>
             Got a project<br />
             <span style={{ color: s.accent }}>in mind?</span>
           </h2>
           <button className="anim d3" style={{
-            padding: "18px 52px", background: s.fg, color: s.bg,
-            border: "none", borderRadius: "100px",
-            fontSize: "15px", fontWeight: 600, fontFamily: "'DM Sans', sans-serif",
-            letterSpacing: "0.01em", transition: "all .2s ease",
+            padding: "1.125rem 3.25rem", background: s.fg, color: s.bg,
+            border: "none", borderRadius: "6.25rem",
+            fontSize: "0.9375rem", fontWeight: 600, fontFamily: "'DM Sans', sans-serif",
+            letterSpacing: "0.02em", transition: "all .2s ease",
           }}
             onMouseEnter={(e) => {
               (e.target as HTMLElement).style.background = s.accent;
               (e.target as HTMLElement).style.transform = "scale(1.03)";
-              (e.target as HTMLElement).style.boxShadow = `0 12px 32px rgba(42,92,255,0.25)`;
+              (e.target as HTMLElement).style.boxShadow = `0 0.75rem 2rem rgba(42,92,255,0.25)`;
             }}
             onMouseLeave={(e) => {
               (e.target as HTMLElement).style.background = s.fg;
@@ -385,14 +385,14 @@ export default function Home() {
 
         {/* FOOTER */}
         <footer style={{
-          padding: "36px 52px", borderTop: `1px solid ${s.border}`,
+          padding: "2.25rem 3.25rem", borderTop: `1px solid ${s.border}`,
           display: "flex", justifyContent: "space-between", alignItems: "center",
         }}>
-          <span style={{ fontSize: "13px", color: s.muted }}>© 2025 Designer Portfolio. All rights reserved.</span>
-          <div style={{ display: "flex", gap: "24px" }}>
+          <span style={{ fontSize: "0.8125rem", color: s.muted }}>© 2025 Designer Portfolio. All rights reserved.</span>
+          <div style={{ display: "flex", gap: "1.5rem" }}>
             {["LinkedIn", "Dribbble", "Twitter"].map((link) => (
               <a key={link} href="#" style={{
-                fontSize: "13px", color: s.muted, textDecoration: "none",
+                fontSize: "0.8125rem", color: s.muted, textDecoration: "none",
                 transition: "color .2s ease",
               }}
                 onMouseEnter={(e) => { (e.target as HTMLElement).style.color = s.accent; }}
@@ -423,65 +423,65 @@ function ProjectCard({
       data-hover="true"
       style={{
         background: hovered ? "#242220" : "#f0ede8",
-        padding: wide ? "52px 44px" : "44px 36px",
+        padding: wide ? "3.25rem 2.75rem" : "2.75rem 2.25rem",
         transition: "background .3s ease",
         aspectRatio: wide ? "auto" : "4/3",
         display: "flex", flexDirection: "column", justifyContent: "space-between",
         position: "relative", overflow: "hidden",
-        borderRadius: "16px",
+        borderRadius: "1rem",
         cursor: "none",
       }}
     >
       {/* Top accent */}
       <div style={{
-        position: "absolute", top: 0, left: 0, right: 0, height: "2.5px",
+        position: "absolute", top: 0, left: 0, right: 0, height: "0.15625rem",
         background: "linear-gradient(90deg, #2a5cff, #7a9cff)",
         transform: hovered ? "scaleX(1)" : "scaleX(0)",
         transformOrigin: "left",
         transition: "transform .35s ease",
-        borderRadius: "16px 16px 0 0",
+        borderRadius: "1rem 1rem 0 0",
       }} />
 
       <div>
         <span style={{
-          display: "inline-block", fontSize: "10px", fontWeight: 700,
+          display: "inline-block", fontSize: "0.625rem", fontWeight: 700,
           letterSpacing: "0.14em", textTransform: "uppercase",
           color: hovered ? "#7a9cff" : "#a09e96",
           border: `1px solid ${hovered ? "rgba(122,156,255,0.4)" : "#e2dfd8"}`,
-          padding: "4px 11px", borderRadius: "100px",
-          marginBottom: "20px", transition: "all .3s ease",
+          padding: "0.25rem 0.6875rem", borderRadius: "6.25rem",
+          marginBottom: "1.25rem", transition: "all .3s ease",
         }}>{project.tag}</span>
 
         <h3 style={{
-          fontSize: wide ? "26px" : "20px", fontWeight: 700, lineHeight: 1.25,
+          fontSize: wide ? "1.625rem" : "1.25rem", fontWeight: 700, lineHeight: 1.25,
           color: hovered ? "#faf9f6" : "#1e1c1a",
-          marginBottom: "14px", transition: "color .3s ease",
+          marginBottom: "0.875rem", transition: "color .3s ease",
         }}>{project.title}</h3>
 
         <p style={{
-          fontSize: "14px", lineHeight: 1.74,
+          fontSize: "0.875rem", lineHeight: 1.74,
           color: hovered ? "rgba(250,249,246,0.45)" : "#a09e96",
-          maxWidth: "380px", transition: "color .3s ease",
+          maxWidth: "23.75rem", transition: "color .3s ease",
         }}>{project.desc}</p>
       </div>
 
       <div style={{
         display: "flex", justifyContent: "space-between",
-        alignItems: "center", marginTop: "36px",
+        alignItems: "center", marginTop: "2.25rem",
       }}>
         <span style={{
-          fontSize: "13px", fontWeight: 600,
+          fontSize: "0.8125rem", fontWeight: 600,
           color: hovered ? "#7a9cff" : "#a09e96",
           letterSpacing: "0.02em", transition: "color .3s ease",
         }}>View Case Study →</span>
         <div style={{
-          width: "38px", height: "38px", borderRadius: "50%",
+          width: "2.375rem", height: "2.375rem", borderRadius: "50%",
           background: hovered ? "#2a5cff" : "#e2dfd8",
           display: "flex", alignItems: "center", justifyContent: "center",
           transition: "all .3s ease",
           transform: hovered ? "rotate(-45deg)" : "rotate(0deg)",
         }}>
-          <span style={{ color: hovered ? "#fff" : "#a09e96", fontSize: "15px" }}>↗</span>
+          <span style={{ color: hovered ? "#fff" : "#a09e96", fontSize: "0.9375rem" }}>↗</span>
         </div>
       </div>
     </div>
