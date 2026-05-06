@@ -12,7 +12,7 @@ export default function MarqueeSection() {
             style={{
                 borderTop: "1px solid var(--border)",
                 borderBottom: "1px solid var(--border)",
-                padding: "14px 0",
+                padding: "0.875rem 0",
                 overflow: "hidden",
                 background: "var(--card-hover)",
             }}
@@ -20,7 +20,7 @@ export default function MarqueeSection() {
             <div
                 style={{
                     display: "flex",
-                    gap: "48px",
+                    gap: "3rem",
                     animation: "marquee 20s linear infinite",
                     whiteSpace: "nowrap",
                 }}
@@ -29,7 +29,7 @@ export default function MarqueeSection() {
                     <span
                         key={i}
                         style={{
-                            fontSize: "11px",
+                            fontSize: "0.6875rem",
                             fontWeight: 600,
                             color:
                                 i % 3 === 0

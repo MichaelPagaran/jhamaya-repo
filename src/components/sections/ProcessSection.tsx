@@ -31,20 +31,20 @@ export default function ProcessSection() {
     return (
         <section
             style={{
-                padding: "120px 52px",
+                padding: "7.5rem 3.25rem",
                 background: "var(--card-hover)",
             }}
         >
-            <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+            <div style={{ maxWidth: "75rem", margin: "0 auto" }}>
                 <p
                     className="anim d1"
                     style={{
-                        fontSize: "10px",
+                        fontSize: "0.625rem",
                         fontWeight: 700,
                         letterSpacing: "0.18em",
                         textTransform: "uppercase",
                         color: "var(--accent)",
-                        marginBottom: "12px",
+                        marginBottom: "0.75rem",
                         fontFamily: "'DM Sans', sans-serif",
                     }}
                 >
@@ -54,10 +54,10 @@ export default function ProcessSection() {
                 <h2
                     className="display anim d2"
                     style={{
-                        fontSize: "clamp(44px, 5.5vw, 80px)",
+                        fontSize: "clamp(2.75rem, 5.5vw, 5rem)",
                         lineHeight: 0.93,
                         color: "var(--bg)",
-                        marginBottom: "72px",
+                        marginBottom: "4.5rem",
                         fontWeight: "bold",
                     }}
                 >
@@ -101,7 +101,7 @@ function ProcessStep({
             className={`anim d${delay}`}
             data-hover="true"
             style={{
-                padding: "40px 28px",
+                padding: "2.5rem 1.75rem",
                 borderLeft: "1px solid rgba(250,249,246,0.08)",
                 transition: "background .2s ease",
             }}
@@ -116,21 +116,21 @@ function ProcessStep({
             <div
                 className="display"
                 style={{
-                    fontSize: "64px",
+                    fontSize: "4rem",
                     color: "var(--accent)",
                     opacity: 0.35,
                     lineHeight: 1,
-                    marginBottom: "20px",
+                    marginBottom: "1.25rem",
                 }}
             >
                 {step.num}
             </div>
             <h3
                 style={{
-                    fontSize: "18px",
+                    fontSize: "1.125rem",
                     fontWeight: 700,
                     color: "var(--bg)",
-                    marginBottom: "10px",
+                    marginBottom: "0.625rem",
                     fontFamily: "'DM Sans', sans-serif",
                 }}
             >
@@ -138,7 +138,7 @@ function ProcessStep({
             </h3>
             <p
                 style={{
-                    fontSize: "14px",
+                    fontSize: "0.875rem",
                     color: "rgba(250,249,246,0.42)",
                     lineHeight: 1.72,
                     fontFamily: "'DM Sans', sans-serif",

@@ -25,8 +25,8 @@ export default function HeroSection() {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "flex-end",
-                    padding: "0 52px 88px",
-                    paddingTop: "100px",
+                    padding: "0 3.25rem 5.5rem",
+                    paddingTop: "6.25rem",
                     position: "relative",
                     overflow: "hidden",
                 }}
@@ -37,8 +37,8 @@ export default function HeroSection() {
                         position: "absolute",
                         top: "30%",
                         left: "55%",
-                        width: "700px",
-                        height: "700px",
+                        width: "43.75rem",
+                        height: "43.75rem",
                         background:
                             "radial-gradient(circle, var(--accent-glow) 0%, transparent 65%)",
                         pointerEvents: "none",
@@ -52,9 +52,9 @@ export default function HeroSection() {
                     style={{
                         position: "absolute",
                         top: "50%",
-                        right: "-60px",
+                        right: "-3.75rem",
                         transform: "translateY(-52%)",
-                        fontSize: "clamp(180px, 30vw, 420px)",
+                        fontSize: "clamp(11.25rem, 30vw, 26.25rem)",
                         color: "transparent",
                         WebkitTextStroke: "1px var(--border)",
                         lineHeight: 1,
@@ -71,27 +71,27 @@ export default function HeroSection() {
                         position: "absolute",
                         top: "22%",
                         right: "25%",
-                        width: "9px",
-                        height: "9px",
+                        width: "0.5625rem",
+                        height: "0.5625rem",
                         background: "var(--accent)",
                         borderRadius: "50%",
-                        boxShadow: "0 0 16px var(--accent-glow)",
+                        boxShadow: "0 0 1rem var(--accent-glow)",
                     }}
                 />
 
                 {/* Content */}
                 <div
-                    style={{ position: "relative", zIndex: 1, maxWidth: "860px" }}
+                    style={{ position: "relative", zIndex: 1, maxWidth: "53.75rem" }}
                 >
                     <p
                         className="anim d1"
                         style={{
-                            fontSize: "11px",
+                            fontSize: "0.6875rem",
                             fontWeight: 700,
                             letterSpacing: "0.16em",
                             textTransform: "uppercase",
                             color: "var(--accent)",
-                            marginBottom: "24px",
+                            marginBottom: "1.5rem",
                             fontFamily: "'DM Sans', sans-serif",
                         }}
                     >
@@ -101,10 +101,10 @@ export default function HeroSection() {
                     <h1
                         className="display anim d2"
                         style={{
-                            fontSize: "clamp(60px, 9.5vw, 130px)",
+                            fontSize: "clamp(3.75rem, 9.5vw, 8.125rem)",
                             lineHeight: 0.93,
                             letterSpacing: "-0.01em",
-                            marginBottom: "32px",
+                            marginBottom: "2rem",
                             fontWeight: "bold",
                         }}
                     >
@@ -128,9 +128,9 @@ export default function HeroSection() {
                     <p
                         className="anim d3"
                         style={{
-                            fontSize: "18px",
+                            fontSize: "1.125rem",
                             color: "var(--muted)",
-                            maxWidth: "460px",
+                            maxWidth: "28.75rem",
                             lineHeight: 1.75,
                             fontFamily: "'DM Sans', sans-serif",
                         }}
@@ -140,16 +140,16 @@ export default function HeroSection() {
 
                     <div
                         className="anim d4"
-                        style={{ display: "flex", gap: "14px", marginTop: "44px" }}
+                        style={{ display: "flex", gap: "0.875rem", marginTop: "2.75rem" }}
                     >
                         <button
                             style={{
-                                padding: "14px 34px",
+                                padding: "0.875rem 2.125rem",
                                 background: "var(--accent)",
                                 color: "#fff",
                                 border: "none",
                                 borderRadius: "100px",
-                                fontSize: "14px",
+                                fontSize: "0.875rem",
                                 fontWeight: 600,
                                 fontFamily: "'DM Sans', sans-serif",
                                 transition:
@@ -161,7 +161,7 @@ export default function HeroSection() {
                                 (
                                     e.currentTarget as HTMLElement
                                 ).style.boxShadow =
-                                    "0 10px 28px rgba(42,92,255,0.28)";
+                                    "0 0.625rem 1.75rem rgba(42,92,255,0.28)";
                             }}
                             onMouseLeave={(e) => {
                                 (e.currentTarget as HTMLElement).style.transform =
@@ -176,12 +176,12 @@ export default function HeroSection() {
 
                         <button
                             style={{
-                                padding: "14px 34px",
+                                padding: "0.875rem 2.125rem",
                                 background: "transparent",
                                 color: "var(--fg)",
                                 border: "1.5px solid var(--border)",
                                 borderRadius: "100px",
-                                fontSize: "14px",
+                                fontSize: "0.875rem",
                                 fontWeight: 500,
                                 fontFamily: "'DM Sans', sans-serif",
                                 transition: "border-color .2s ease",
@@ -207,17 +207,17 @@ export default function HeroSection() {
                     className="anim d5"
                     style={{
                         position: "absolute",
-                        bottom: "44px",
-                        right: "52px",
+                        bottom: "2.75rem",
+                        right: "3.25rem",
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                        gap: "8px",
+                        gap: "0.5rem",
                     }}
                 >
                     <span
                         style={{
-                            fontSize: "10px",
+                            fontSize: "0.625rem",
                             color: "var(--muted2)",
                             letterSpacing: "0.1em",
                             textTransform: "uppercase",
@@ -229,7 +229,7 @@ export default function HeroSection() {
                     <div
                         style={{
                             width: "1px",
-                            height: "48px",
+                            height: "3rem",
                             background:
                                 "linear-gradient(to bottom, var(--muted2), transparent)",
                         }}

@@ -30,7 +30,7 @@ export default function Button({
 
     const styles: Record<string, string> = {
         primary:
-            "bg-[var(--accent)] text-white hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(42,92,255,0.28)]",
+            "bg-[var(--accent)] text-white hover:-translate-y-0.5 hover:shadow-[0_0.625rem_1.75rem_rgba(42,92,255,0.28)]",
         secondary:
             "bg-transparent text-[var(--fg)] border border-[var(--border)] hover:border-[var(--muted2)]",
         dark: "bg-[var(--fg)] text-[var(--bg)] hover:bg-[var(--accent)]",

@@ -25,7 +25,7 @@ export default function ProjectCard({ project, wide = false }: ProjectCardProps)
             data-hover="true"
             style={{
                 background: hovered ? "#242220" : "#f0ede8",
-                padding: wide ? "52px 44px" : "44px 36px",
+                padding: wide ? "3.25rem 2.75rem" : "2.75rem 2.25rem",
                 transition: "background 0.3s ease",
                 aspectRatio: wide ? "auto" : "4/3",
                 display: "flex",
@@ -33,7 +33,7 @@ export default function ProjectCard({ project, wide = false }: ProjectCardProps)
                 justifyContent: "space-between",
                 position: "relative",
                 overflow: "hidden",
-                borderRadius: "16px",
+                borderRadius: "1rem",
                 cursor: "none",
             }}
         >
@@ -44,12 +44,12 @@ export default function ProjectCard({ project, wide = false }: ProjectCardProps)
                     top: 0,
                     left: 0,
                     right: 0,
-                    height: "2.5px",
+                    height: "0.15625rem",
                     background: "linear-gradient(90deg, #2a5cff, #7a9cff)",
                     transform: hovered ? "scaleX(1)" : "scaleX(0)",
                     transformOrigin: "left",
                     transition: "transform 0.35s ease",
-                    borderRadius: "16px 16px 0 0",
+                    borderRadius: "1rem 1rem 0 0",
                 }}
             />
 
@@ -58,15 +58,15 @@ export default function ProjectCard({ project, wide = false }: ProjectCardProps)
                 <span
                     style={{
                         display: "inline-block",
-                        fontSize: "10px",
+                        fontSize: "0.625rem",
                         fontWeight: 700,
                         letterSpacing: "0.14em",
                         textTransform: "uppercase",
                         color: hovered ? "#7a9cff" : "#a09e96",
                         border: `1px solid ${hovered ? "rgba(122,156,255,0.4)" : "#e2dfd8"}`,
-                        padding: "4px 11px",
-                        borderRadius: "100px",
-                        marginBottom: "20px",
+                        padding: "0.25rem 0.6875rem",
+                        borderRadius: "6.25rem",
+                        marginBottom: "1.25rem",
                         transition: "all 0.3s ease",
                         fontFamily: "'DM Sans', sans-serif",
                     }}
@@ -77,11 +77,11 @@ export default function ProjectCard({ project, wide = false }: ProjectCardProps)
                 {/* Title */}
                 <h3
                     style={{
-                        fontSize: wide ? "26px" : "20px",
+                        fontSize: wide ? "1.625rem" : "1.25rem",
                         fontWeight: 700,
                         lineHeight: 1.25,
                         color: hovered ? "#faf9f6" : "#1e1c1a",
-                        marginBottom: "14px",
+                        marginBottom: "0.875rem",
                         transition: "color 0.3s ease",
                         fontFamily: "'DM Sans', sans-serif",
                     }}
@@ -92,10 +92,10 @@ export default function ProjectCard({ project, wide = false }: ProjectCardProps)
                 {/* Description */}
                 <p
                     style={{
-                        fontSize: "14px",
+                        fontSize: "0.875rem",
                         lineHeight: 1.74,
                         color: hovered ? "rgba(250,249,246,0.45)" : "#a09e96",
-                        maxWidth: "380px",
+                        maxWidth: "23.75rem",
                         transition: "color 0.3s ease",
                         fontFamily: "'DM Sans', sans-serif",
                     }}
@@ -110,12 +110,12 @@ export default function ProjectCard({ project, wide = false }: ProjectCardProps)
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
-                    marginTop: "36px",
+                    marginTop: "2.25rem",
                 }}
             >
                 <span
                     style={{
-                        fontSize: "13px",
+                        fontSize: "0.8125rem",
                         fontWeight: 600,
                         color: hovered ? "#7a9cff" : "#a09e96",
                         letterSpacing: "0.02em",
@@ -129,8 +129,8 @@ export default function ProjectCard({ project, wide = false }: ProjectCardProps)
                 {/* Arrow circle */}
                 <div
                     style={{
-                        width: "38px",
-                        height: "38px",
+                        width: "2.375rem",
+                        height: "2.375rem",
                         borderRadius: "50%",
                         background: hovered ? "#2a5cff" : "#e2dfd8",
                         display: "flex",
@@ -143,7 +143,7 @@ export default function ProjectCard({ project, wide = false }: ProjectCardProps)
                     <span
                         style={{
                             color: hovered ? "#fff" : "#a09e96",
-                            fontSize: "15px",
+                            fontSize: "0.9375rem",
                         }}
                     >
                         ↗

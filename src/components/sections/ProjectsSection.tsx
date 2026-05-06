@@ -14,26 +14,26 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
     const bottomRow = projects.slice(3);
 
     return (
-        <section style={{ padding: "120px 52px" }}>
+        <section style={{ padding: "7.5rem 3.25rem" }}>
             {/* Section header */}
             <div
                 style={{
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "flex-end",
-                    marginBottom: "64px",
+                    marginBottom: "4rem",
                 }}
             >
                 <div>
                     <p
                         className="anim d1"
                         style={{
-                            fontSize: "10px",
+                            fontSize: "0.625rem",
                             fontWeight: 700,
                             letterSpacing: "0.18em",
                             textTransform: "uppercase",
                             color: "var(--muted)",
-                            marginBottom: "12px",
+                            marginBottom: "0.75rem",
                             fontFamily: "'DM Sans', sans-serif",
                         }}
                     >
@@ -42,7 +42,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                     <h2
                         className="display anim d2"
                         style={{
-                            fontSize: "clamp(44px, 5.5vw, 80px)",
+                            fontSize: "clamp(2.75rem, 5.5vw, 5rem)",
                             lineHeight: 0.93,
                             fontWeight: "bold",
                         }}
@@ -57,10 +57,10 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                 <span
                     className="anim d3"
                     style={{
-                        fontSize: "12px",
+                        fontSize: "0.75rem",
                         color: "var(--muted)",
                         fontWeight: 500,
-                        paddingBottom: "6px",
+                        paddingBottom: "0.375rem",
                         fontFamily: "'DM Sans', sans-serif",
                     }}
                 >
@@ -73,7 +73,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                 style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(3, 1fr)",
-                    gap: "10px",
+                    gap: "0.625rem",
                 }}
             >
                 {topRow.map((project) => (
@@ -87,8 +87,8 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                     style={{
                         display: "grid",
                         gridTemplateColumns: "repeat(2, 1fr)",
-                        gap: "10px",
-                        marginTop: "10px",
+                        gap: "0.625rem",
+                        marginTop: "0.625rem",
                     }}
                 >
                     {bottomRow.map((project) => (
