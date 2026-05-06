@@ -36,8 +36,8 @@ const projects = [
 ];
 
 const marqueeItems = [
-  "UX Design","Product Design","Design Systems","User Research",
-  "Interaction Design","Prototyping","Figma","Usability Testing",
+  "UX Design", "Product Design", "Design Systems", "User Research",
+  "Interaction Design", "Prototyping", "Figma", "Usability Testing",
 ];
 
 const s = {
@@ -212,7 +212,7 @@ export default function Home() {
             <p className="anim d3" style={{
               fontSize: "18px", color: s.muted,
               maxWidth: "460px", lineHeight: 1.75,
-            }}>I turn complex systems into intuitive experiences — specializing in security, data, and enterprise products.</p>
+            }}>Designing the interfaces that make highly technical software easy to use. Focused on security systems, data tools, and enterprise products.</p>
 
             <div className="anim d4" style={{ display: "flex", gap: "14px", marginTop: "44px" }}>
               <button style={{
@@ -283,11 +283,11 @@ export default function Home() {
                 fontSize: "10px", fontWeight: 700, letterSpacing: "0.18em",
                 textTransform: "uppercase", color: s.muted, marginBottom: "12px",
               }}>Selected Work</p>
-              <h2 className="display anim d2" style={{ fontSize: "clamp(44px, 5.5vw, 80px)", lineHeight: 0.93 }}>
-                Projects I've<br /><span style={{ color: s.accent }}>Led & Designed</span>
+              <h2 className="display anim d2" style={{ fontSize: "clamp(44px, 5.5vw, 80px)", lineHeight: 0.93, fontWeight: "bold" }}>
+                Projects I've <br /><span style={{ color: s.accent }}>Led & Designed</span>
               </h2>
             </div>
-            <span className="anim d3" style={{ fontSize: "12px", color: s.muted, fontWeight: 500, paddingBottom: "6px" }}>
+            <span className="anim d3" style={{ fontSize: "12px", color: s.muted, fontWeight: 500, paddingBottom: "6px", }}>
               0{projects.length} cases
             </span>
           </div>

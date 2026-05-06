@@ -46,7 +46,7 @@ export default function HeroSection() {
                     }}
                 />
 
-                {/* Ghost "UX" watermark */}
+                {/* Ghost "UI/UX" watermark */}
                 <div
                     className="display"
                     style={{
@@ -62,7 +62,7 @@ export default function HeroSection() {
                         userSelect: "none",
                     }}
                 >
-                    UX
+                    UI/UX
                 </div>
 
                 {/* Blue accent dot */}
@@ -105,6 +105,7 @@ export default function HeroSection() {
                             lineHeight: 0.93,
                             letterSpacing: "-0.01em",
                             marginBottom: "32px",
+                            fontWeight: "bold",
                         }}
                     >
                         Bringing{" "}
@@ -134,8 +135,7 @@ export default function HeroSection() {
                             fontFamily: "'DM Sans', sans-serif",
                         }}
                     >
-                        I turn complex systems into intuitive experiences —
-                        specializing in security, data, and enterprise products.
+                        Designing the interfaces that make highly technical software easy to use. Focused on security systems, data tools, and enterprise products.
                     </p>
 
                     <div

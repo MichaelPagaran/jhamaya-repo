@@ -15,7 +15,7 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const SOCIAL_LINKS = [
-    { label: "LinkedIn", href: "#" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/jhamaya-santiago-41690b221/" },
     { label: "Dribbble", href: "#" },
     { label: "Twitter", href: "#" },
 ] as const;

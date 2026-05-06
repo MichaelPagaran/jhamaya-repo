@@ -6,6 +6,7 @@ import { SOCIAL_LINKS } from "@/constants";
  * Site footer with copyright on the left and social links on the right.
  */
 export default function Footer() {
+    console.log("Footer rendered with links:", SOCIAL_LINKS);
     return (
         <footer
             style={{
@@ -32,6 +33,8 @@ export default function Footer() {
                     <a
                         key={link.label}
                         href={link.href}
+                        target={link.href.startsWith("http") ? "_blank" : "_self"}
+                        rel={link.href.startsWith("http") ? "noopener noreferrer" : ""}
                         style={{
                             fontSize: "13px",
                             color: "var(--muted)",

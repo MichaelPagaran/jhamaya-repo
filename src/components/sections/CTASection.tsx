@@ -50,6 +50,7 @@ export default function CTASection() {
                     fontSize: "clamp(52px, 8.5vw, 112px)",
                     lineHeight: 0.93,
                     marginBottom: "48px",
+                    fontWeight: "bold",
                 }}
             >
                 Got a project
