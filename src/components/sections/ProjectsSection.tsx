@@ -44,6 +44,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                         style={{
                             fontSize: "clamp(44px, 5.5vw, 80px)",
                             lineHeight: 0.93,
+                            fontWeight: "bold",
                         }}
                     >
                         Projects I&apos;ve

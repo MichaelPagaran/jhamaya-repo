@@ -58,6 +58,7 @@ export default function ProcessSection() {
                         lineHeight: 0.93,
                         color: "var(--bg)",
                         marginBottom: "72px",
+                        fontWeight: "bold",
                     }}
                 >
                     How{" "}
