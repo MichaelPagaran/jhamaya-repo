@@ -30,6 +30,7 @@ const STEPS = [
 export default function ProcessSection() {
     return (
         <section
+            id="process"
             style={{
                 padding: "7.5rem 3.25rem",
                 background: "var(--card-hover)",
