@@ -20,7 +20,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
     const bottomRow = projects.slice(3);
 
     return (
-        <section style={{ padding: "7.5rem 3.25rem" }}>
+        <section id="projects" style={{ padding: "7.5rem 3.25rem" }}>
             {/* Section header */}
             <div
                 style={{
