@@ -7,6 +7,7 @@
 export default function CTASection() {
     return (
         <section
+            id="cta"
             style={{
                 padding: "8.75rem 3.25rem",
                 textAlign: "center",

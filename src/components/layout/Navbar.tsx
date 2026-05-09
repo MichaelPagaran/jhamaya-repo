@@ -75,7 +75,18 @@ export default function Navbar() {
                     {NAV_LINKS.map((link) => (
                         <button
                             key={link.label}
-                            onClick={() => setActiveNav(link.label)}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setActiveNav(link.label);
+                                if (link.href === "/") {
+                                    window.scrollTo({ top: 0, behavior: "smooth" });
+                                } else if (link.href.startsWith("#")) {
+                                    const element = document.getElementById(link.href.substring(1));
+                                    if (element) {
+                                        element.scrollIntoView({ behavior: "smooth" });
+                                    }
+                                }
+                            }}
                             style={{
                                 padding: "0.375rem 1.125rem",
                                 borderRadius: "6.25rem",
@@ -106,6 +117,13 @@ export default function Navbar() {
 
             {/* Right: Contact CTA */}
             <button
+                onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById("cta");
+                    if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                    }
+                }}
                 style={{
                     padding: "0.625rem 1.5rem",
                     background: "var(--fg)",

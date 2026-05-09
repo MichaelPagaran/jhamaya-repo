@@ -10,8 +10,8 @@ export const SITE_META = {
 export const NAV_LINKS: NavLink[] = [
     { label: "Home", href: "/" },
     { label: "Projects", href: "#projects" },
-    { label: "Journal", href: "#journal" },
-    { label: "About Me", href: "#about" },
+    { label: "Process", href: "#process" },
+    { label: "Contact", href: "#cta" },
 ];
 
 export const SOCIAL_LINKS = [
