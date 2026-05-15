@@ -14,6 +14,8 @@ export async function getAllProjects(): Promise<Project[]> {
             tag: "Security Ops",
             tags: ["UX Design", "Security", "Dashboard"],
             date: "2024-06-01",
+            screenshots: ["/placeholder-1.jpg", "/placeholder-2.jpg"],
+            figmaUrl: "#",
         },
         {
             slug: "cyber-risk-management",
@@ -23,6 +25,11 @@ export async function getAllProjects(): Promise<Project[]> {
             tag: "Risk Design",
             tags: ["UX Design", "Risk", "Enterprise"],
             date: "2024-03-01",
+            screenshots: ["/placeholder-3.jpg", "/placeholder-1.jpg"],
+            figmaUrl: "#",
+            challenge: "The process was technically dense and hard to follow.",
+            whatIDid: "Restructured the flow into clearer stages and improved how users move from risk identification to monitoring.",
+            outcome: "A more usable system with better clarity, navigation, and workflow alignment",
         },
         {
             slug: "sniff-and-detect",
@@ -32,6 +39,8 @@ export async function getAllProjects(): Promise<Project[]> {
             tag: "UX Research",
             tags: ["UX Research", "Security", "Usability"],
             date: "2023-11-01",
+            screenshots: ["/placeholder-2.jpg", "/placeholder-3.jpg"],
+            figmaUrl: "#",
         },
         {
             slug: "data-visibility-platform",
@@ -41,6 +50,8 @@ export async function getAllProjects(): Promise<Project[]> {
             tag: "Dashboard",
             tags: ["Dashboard", "Data Viz", "Enterprise"],
             date: "2023-08-01",
+            screenshots: ["/placeholder-1.jpg", "/placeholder-2.jpg"],
+            figmaUrl: "#",
         },
         {
             slug: "identity-access-portal",
@@ -50,6 +61,8 @@ export async function getAllProjects(): Promise<Project[]> {
             tag: "Enterprise UX",
             tags: ["Enterprise UX", "IAM", "Onboarding"],
             date: "2023-05-01",
+            screenshots: ["/placeholder-3.jpg", "/placeholder-1.jpg"],
+            figmaUrl: "#",
         },
     ];
 }

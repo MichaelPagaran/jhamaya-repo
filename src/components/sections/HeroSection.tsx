@@ -155,6 +155,11 @@ export default function HeroSection() {
                                 transition:
                                     "transform .15s ease, box-shadow .15s ease",
                             }}
+                            onClick={() => {
+                                document.getElementById("projects")?.scrollIntoView({
+                                    behavior: "smooth",
+                                });
+                            }}
                             onMouseEnter={(e) => {
                                 (e.currentTarget as HTMLElement).style.transform =
                                     "translateY(-2px)";
@@ -185,6 +190,11 @@ export default function HeroSection() {
                                 fontWeight: 500,
                                 fontFamily: "'DM Sans', sans-serif",
                                 transition: "border-color .2s ease",
+                            }}
+                            onClick={() => {
+                                document.getElementById("projects")?.scrollIntoView({
+                                    behavior: "smooth",
+                                });
                             }}
                             onMouseEnter={(e) => {
                                 (
