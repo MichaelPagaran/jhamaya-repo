@@ -112,9 +112,9 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 
             {/* Modal Portal Component */}
             {selectedProject && (
-                <ProjectModal 
-                    project={selectedProject} 
-                    onClose={() => setSelectedProject(null)} 
+                <ProjectModal
+                    project={selectedProject}
+                    onClose={() => setSelectedProject(null)}
                 />
             )}
         </section>
