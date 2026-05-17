@@ -7,23 +7,23 @@
 const STEPS = [
     {
         num: "01",
-        title: "Discover",
-        desc: "Deep dives into user needs, technical constraints, and business goals.",
+        title: "Understand",
+        desc: "Before I start designing, I need to know the purpose behind the work. I dive into what users need and what the business wants to achieve. If we don’t know why we’re building something, we’re just guessing.",
     },
     {
         num: "02",
-        title: "Define",
-        desc: "Synthesizing research into clear problem statements and design principles.",
+        title: "Plan",
+        desc: "I take all those insights and turn them into a clear path forward. This is where I define the specific problem we’re solving and set the ground rules so the team stays aligned on the goal.",
     },
     {
         num: "03",
-        title: "Design",
-        desc: "Rapid prototyping, iteration, and high-fidelity execution in Figma.",
+        title: "Create",
+        desc: "This is where the ideas become real. I move from quick sketches to polished designs, constantly testing and refining the details until the experience feels natural and easy to use.",
     },
     {
         num: "04",
-        title: "Deliver",
-        desc: "Collaborating with engineers, validating with users, and shipping with impact.",
+        title: "Launch",
+        desc: "A design isn’t finished until it’s in the hands of users. I work closely with the people building it to make sure the final product is high quality, works as intended, and actually solves the problem.",
     },
 ];
 

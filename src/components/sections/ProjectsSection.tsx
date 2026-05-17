@@ -1,5 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import { Project } from "@/types";
 import ProjectCard from "@/components/ui/ProjectCard";
+import ProjectModal from "@/components/ui/ProjectModal";
 
 interface ProjectsSectionProps {
     projects: Project[];
@@ -10,6 +14,8 @@ interface ProjectsSectionProps {
  * Receives projects as a prop (fetched server-side in page.tsx).
  */
 export default function ProjectsSection({ projects }: ProjectsSectionProps) {
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
     const topRow = projects.slice(0, 3);
     const bottomRow = projects.slice(3);
 
@@ -77,7 +83,9 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                 }}
             >
                 {topRow.map((project) => (
-                    <ProjectCard key={project.slug} project={project} />
+                    <div key={project.slug} onClick={() => setSelectedProject(project)}>
+                        <ProjectCard project={project} />
+                    </div>
                 ))}
             </div>
 
@@ -92,13 +100,22 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                     }}
                 >
                     {bottomRow.map((project) => (
-                        <ProjectCard
-                            key={project.slug}
-                            project={project}
-                            wide
-                        />
+                        <div key={project.slug} onClick={() => setSelectedProject(project)}>
+                            <ProjectCard
+                                project={project}
+                                wide
+                            />
+                        </div>
                     ))}
                 </div>
+            )}
+
+            {/* Modal Portal Component */}
+            {selectedProject && (
+                <ProjectModal
+                    project={selectedProject}
+                    onClose={() => setSelectedProject(null)}
+                />
             )}
         </section>
     );

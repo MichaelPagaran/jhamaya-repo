@@ -9,6 +9,11 @@ export interface Project {
     date: string;
     url?: string;
     coverImage?: string;
+    screenshots?: string[];
+    figmaUrl?: string;
+    challenge?: string;
+    whatIDid?: string;
+    outcome?: string;
 }
 
 /** Navigation link */
