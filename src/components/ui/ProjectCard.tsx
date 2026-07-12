@@ -54,25 +54,47 @@ export default function ProjectCard({ project, wide = false }: ProjectCardProps)
             />
 
             <div>
-                {/* Tag pill */}
-                <span
+                {/* Tag and Year header */}
+                <div
                     style={{
-                        display: "inline-block",
-                        fontSize: "0.625rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        color: hovered ? "#7a9cff" : "#a09e96",
-                        border: `1px solid ${hovered ? "rgba(122,156,255,0.4)" : "#e2dfd8"}`,
-                        padding: "0.25rem 0.6875rem",
-                        borderRadius: "6.25rem",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
                         marginBottom: "1.25rem",
-                        transition: "all 0.3s ease",
-                        fontFamily: "'DM Sans', sans-serif",
                     }}
                 >
-                    {project.tag}
-                </span>
+                    {/* Tag pill */}
+                    <span
+                        style={{
+                            display: "inline-block",
+                            fontSize: "0.625rem",
+                            fontWeight: 700,
+                            letterSpacing: "0.14em",
+                            textTransform: "uppercase",
+                            color: hovered ? "#7a9cff" : "#a09e96",
+                            border: `1px solid ${hovered ? "rgba(122,156,255,0.4)" : "#e2dfd8"}`,
+                            padding: "0.25rem 0.6875rem",
+                            borderRadius: "6.25rem",
+                            transition: "all 0.3s ease",
+                            fontFamily: "'DM Sans', sans-serif",
+                        }}
+                    >
+                        {project.tag}
+                    </span>
+
+                    {/* Year */}
+                    <span
+                        style={{
+                            fontSize: "0.75rem",
+                            fontWeight: 500,
+                            color: hovered ? "rgba(250,249,246,0.65)" : "#a09e96",
+                            fontFamily: "'DM Sans', sans-serif",
+                            transition: "color 0.3s ease",
+                        }}
+                    >
+                        {project.year || project.date}
+                    </span>
+                </div>
 
                 {/* Title */}
                 <h3

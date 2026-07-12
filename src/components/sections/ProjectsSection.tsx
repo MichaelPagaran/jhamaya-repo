@@ -75,13 +75,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
             </div>
 
             {/* 3-column top row */}
-            <div
-                style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(3, 1fr)",
-                    gap: "0.625rem",
-                }}
-            >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[0.625rem]">
                 {topRow.map((project) => (
                     <div key={project.slug} onClick={() => setSelectedProject(project)}>
                         <ProjectCard project={project} />
@@ -91,14 +85,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 
             {/* 2-column bottom row */}
             {bottomRow.length > 0 && (
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(2, 1fr)",
-                        gap: "0.625rem",
-                        marginTop: "0.625rem",
-                    }}
-                >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[0.625rem] mt-[0.625rem]">
                     {bottomRow.map((project) => (
                         <div key={project.slug} onClick={() => setSelectedProject(project)}>
                             <ProjectCard
