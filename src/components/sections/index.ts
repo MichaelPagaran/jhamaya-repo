@@ -4,3 +4,4 @@ export { default as ProjectsSection } from "./ProjectsSection";
 export { default as ProcessSection } from "./ProcessSection";
 export { default as CTASection } from "./CTASection";
 export { default as AboutSection } from "./AboutSection";
+export { default as CaseStudiesSection } from "./CaseStudiesSection";

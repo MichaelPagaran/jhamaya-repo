@@ -10,6 +10,7 @@ export const SITE_META = {
 export const NAV_LINKS: NavLink[] = [
     { label: "Home", href: "/" },
     { label: "Projects", href: "#projects" },
+    { label: "Case Studies", href: "#case-studies" },
     { label: "Process", href: "#process" },
     { label: "Contact", href: "#cta" },
 ];
