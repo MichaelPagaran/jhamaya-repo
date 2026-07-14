@@ -22,8 +22,42 @@ export function useScrollAnimation(threshold = 0.12) {
             { threshold }
         );
 
-        document.querySelectorAll(".anim").forEach((el) => observer.observe(el));
+        let mutationObserver: MutationObserver | null = null;
 
-        return () => observer.disconnect();
+        const timer = setTimeout(() => {
+            // Observe any elements currently present in the DOM
+            document.querySelectorAll(".anim").forEach((el) => {
+                observer.observe(el);
+            });
+
+            // Use MutationObserver to observe elements added later (e.g. during hydration or page mount)
+            mutationObserver = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    mutation.addedNodes.forEach((node) => {
+                        if (node instanceof HTMLElement) {
+                            if (node.classList.contains("anim")) {
+                                observer.observe(node);
+                            }
+                            node.querySelectorAll(".anim").forEach((el) => {
+                                observer.observe(el);
+                            });
+                        }
+                    });
+                });
+            });
+
+            mutationObserver.observe(document.body, {
+                childList: true,
+                subtree: true,
+            });
+        }, 150);
+
+        return () => {
+            clearTimeout(timer);
+            observer.disconnect();
+            if (mutationObserver) {
+                mutationObserver.disconnect();
+            }
+        };
     }, [threshold]);
 }

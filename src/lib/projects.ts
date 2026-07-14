@@ -7,62 +7,52 @@ import { Project } from "@/types";
 export async function getAllProjects(): Promise<Project[]> {
     return [
         {
-            slug: "cyber-incident-management",
-            title: "Cyber Incident & Management",
+            slug: "aquila-cyber-security",
+            title: "AQUILA All-in-one Cyber Security Platform",
             description:
-                "Simplified a security operations workflow designed to help SOC Teams review alerts, create cases, investigate incidents, and track response progress.",
-            tag: "Security Ops",
-            tags: ["UX Design", "Security", "Dashboard"],
-            date: "2024-06-01",
-            screenshots: ["/placeholder-1.jpg", "/placeholder-2.jpg"],
+                "Managed the end-to-end design and delivery of a cyber security unified enterprise platform.",
+            tag: "Cyber Security",
+            tags: ["Cybersecurity", "Design System", "Enterprise"],
+            date: "2024-01-01",
+            year: "2024 - 2026",
+            screenshots: ["/aquila-mockup.png"],
             figmaUrl: "#",
+            contributions: [
+                "Managed the end-to-end design and delivery of a cyber security unified enterprise platform.",
+                "Established a scalable design system to synchronize product and development workflows, accelerating time-to-market."
+            ],
         },
         {
-            slug: "cyber-risk-management",
-            title: "Cyber Risk Management",
+            slug: "dayung",
+            title: "Dayung",
             description:
-                "Designed a clearer workflow for a complex risk process across assessment, treatment, and monitoring.",
-            tag: "Risk Design",
-            tags: ["UX Design", "Risk", "Enterprise"],
-            date: "2024-03-01",
-            screenshots: ["/placeholder-3.jpg", "/placeholder-1.jpg"],
+                "Responsible for the end-to-end UX/UI for the AI-powered B2B SaaS platform, simplifying financial management and asset tracking for non-technical users.",
+            tag: "B2B SaaS",
+            tags: ["Enterprise UX", "AI", "Financial UX"],
+            date: "2025-01-01",
+            year: "2025 - Present",
+            screenshots: ["/dayung-mockup.png", "/dayung-1cover.jpg"],
             figmaUrl: "#",
-            challenge: "The process was technically dense and hard to follow.",
-            whatIDid: "Restructured the flow into clearer stages and improved how users move from risk identification to monitoring.",
-            outcome: "A more usable system with better clarity, navigation, and workflow alignment",
+            contributions: [
+                "Responsible for the end-to-end UX/UI for the AI-powered B2B SaaS platform, simplifying financial management and asset tracking for non-technical users.",
+                "Turned complex compliance rules into easy-to-use digital tools built for Philippine HOAs and corporate teams."
+            ],
         },
         {
-            slug: "sniff-and-detect",
-            title: "Sniff and Detect",
+            slug: "noli-me-tangere-game",
+            title: "Jose Rizal's Noli Me Tangere Educational Mobile Game",
             description:
-                "Designed a security scanning experience that simplifies technical results for all users.",
-            tag: "UX Research",
-            tags: ["UX Research", "Security", "Usability"],
-            date: "2023-11-01",
-            screenshots: ["/placeholder-2.jpg", "/placeholder-3.jpg"],
+                "Designed the UI/UX, game mechanics, and interactive user journeys for a mobile educational app, balancing gamification elements with educational objectives.",
+            tag: "Educational Game",
+            tags: ["Mobile Game", "Gamification", "UX Design"],
+            date: "2022-01-01",
+            year: "2022 - 2023",
+            screenshots: ["/noli-mockup.png"],
             figmaUrl: "#",
-        },
-        {
-            slug: "data-visibility-platform",
-            title: "Data Visibility Platform",
-            description:
-                "Built an intuitive dashboard that transforms complex data streams into actionable insights for non-technical stakeholders.",
-            tag: "Dashboard",
-            tags: ["Dashboard", "Data Viz", "Enterprise"],
-            date: "2023-08-01",
-            screenshots: ["/placeholder-1.jpg", "/placeholder-2.jpg"],
-            figmaUrl: "#",
-        },
-        {
-            slug: "identity-access-portal",
-            title: "Identity Access Portal",
-            description:
-                "Redesigned the user onboarding flow for an enterprise IAM system, reducing setup time by 60%.",
-            tag: "Enterprise UX",
-            tags: ["Enterprise UX", "IAM", "Onboarding"],
-            date: "2023-05-01",
-            screenshots: ["/placeholder-3.jpg", "/placeholder-1.jpg"],
-            figmaUrl: "#",
+            contributions: [
+                "Designed the UI/UX, game mechanics, and interactive user journeys for a mobile educational app, balancing gamification elements with educational objectives.",
+                "Utilized human-centered design principles to turn the historical literature into an engaging, accessible mobile experience that boosted student retention."
+            ],
         },
     ];
 }

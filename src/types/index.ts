@@ -7,6 +7,7 @@ export interface Project {
     tag: string;
     tags: string[];
     date: string;
+    year?: string;
     url?: string;
     coverImage?: string;
     screenshots?: string[];
@@ -14,6 +15,8 @@ export interface Project {
     challenge?: string;
     whatIDid?: string;
     outcome?: string;
+    contributions?: string[];
+    kpis?: { label: string; value: string }[];
 }
 
 /** Navigation link */

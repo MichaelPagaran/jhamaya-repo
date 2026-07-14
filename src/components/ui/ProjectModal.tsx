@@ -134,10 +134,17 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     <div className="flex flex-col justify-between h-full px-10 pt-14 pb-10">
                         {/* Top: Tag + Title + Description + Details */}
                         <div className="flex flex-col">
-                            {/* Tag Pill */}
-                            <span className="inline-flex items-center self-start text-[0.6875rem] font-semibold tracking-widest uppercase bg-blue-50 text-blue-600 border border-blue-200 px-3 py-1 rounded-full mb-5">
-                                {project.tag}
-                            </span>
+                            {/* Tag + Year Row */}
+                            <div className="flex justify-between items-center mb-5">
+                                {/* Tag Pill */}
+                                <span className="inline-flex items-center text-[0.6875rem] font-semibold tracking-widest uppercase bg-blue-50 text-blue-600 border border-blue-200 px-3.5 py-1.5 rounded-full">
+                                    {project.tag}
+                                </span>
+                                {/* Year */}
+                                <span className="text-[0.8125rem] font-semibold tracking-wider text-slate-400">
+                                    {project.year || project.date}
+                                </span>
+                            </div>
 
                             <h2 className="text-[1.875rem] lg:text-[2.125rem] font-bold text-slate-900 mb-4 tracking-tight leading-[1.2]">
                                 {project.title}
@@ -147,43 +154,75 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                                 {project.description}
                             </p>
 
-                            {/* Project Details Stack */}
-                            {(project.challenge || project.whatIDid || project.outcome) && (
-                                <div className="flex flex-col gap-6">
-                                    {project.challenge && (
-                                        <div>
-                                            <h3 className="text-[0.8125rem] font-bold mb-1.5 flex items-center gap-2 text-slate-800">
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                                                Challenge
-                                            </h3>
-                                            <p className="text-[0.875rem] text-slate-500 leading-[1.7]">
-                                                {project.challenge}
-                                            </p>
+                            {/* KPIs Grid */}
+                            {project.kpis && project.kpis.length > 0 && (
+                                <div className="grid grid-cols-2 gap-4 mb-8 bg-slate-50/50 p-4 rounded-xl border border-slate-100/60">
+                                    {project.kpis.map((kpi, idx) => (
+                                        <div key={idx} className="flex flex-col">
+                                            <span className="text-[1.5rem] font-bold text-[var(--accent)] tracking-tight">
+                                                {kpi.value}
+                                            </span>
+                                            <span className="text-[0.6875rem] font-medium text-slate-500 uppercase tracking-wider mt-0.5">
+                                                {kpi.label}
+                                            </span>
                                         </div>
-                                    )}
-                                    {project.whatIDid && (
-                                        <div>
-                                            <h3 className="text-[0.8125rem] font-bold mb-1.5 flex items-center gap-2 text-slate-800">
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                                                What I did
-                                            </h3>
-                                            <p className="text-[0.875rem] text-slate-500 leading-[1.7]">
-                                                {project.whatIDid}
-                                            </p>
-                                        </div>
-                                    )}
-                                    {project.outcome && (
-                                        <div>
-                                            <h3 className="text-[0.8125rem] font-bold mb-1.5 flex items-center gap-2 text-slate-800">
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                                                Outcome
-                                            </h3>
-                                            <p className="text-[0.875rem] text-slate-500 leading-[1.7]">
-                                                {project.outcome}
-                                            </p>
-                                        </div>
-                                    )}
+                                    ))}
                                 </div>
+                            )}
+
+                            {/* Project Details Stack */}
+                            {project.contributions && project.contributions.length > 0 ? (
+                                <div className="flex flex-col gap-4">
+                                    <h3 className="text-[0.8125rem] font-bold mb-1.5 flex items-center gap-2 text-slate-800 uppercase tracking-widest">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                                        Contributions
+                                    </h3>
+                                    <ul className="list-disc pl-5 flex flex-col gap-3.5 text-[0.875rem] text-slate-500 leading-[1.6]">
+                                        {project.contributions.map((bullet, idx) => (
+                                            <li key={idx} className="marker:text-blue-500">
+                                                {bullet}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ) : (
+                                (project.challenge || project.whatIDid || project.outcome) && (
+                                    <div className="flex flex-col gap-6">
+                                        {project.challenge && (
+                                            <div>
+                                                <h3 className="text-[0.8125rem] font-bold mb-1.5 flex items-center gap-2 text-slate-800">
+                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                                                    Challenge
+                                                </h3>
+                                                <p className="text-[0.875rem] text-slate-500 leading-[1.7]">
+                                                    {project.challenge}
+                                                </p>
+                                            </div>
+                                        )}
+                                        {project.whatIDid && (
+                                            <div>
+                                                <h3 className="text-[0.8125rem] font-bold mb-1.5 flex items-center gap-2 text-slate-800">
+                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                                    What I did
+                                                </h3>
+                                                <p className="text-[0.875rem] text-slate-500 leading-[1.7]">
+                                                    {project.whatIDid}
+                                                </p>
+                                            </div>
+                                        )}
+                                        {project.outcome && (
+                                            <div>
+                                                <h3 className="text-[0.8125rem] font-bold mb-1.5 flex items-center gap-2 text-slate-800">
+                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                                                    Outcome
+                                                </h3>
+                                                <p className="text-[0.875rem] text-slate-500 leading-[1.7]">
+                                                    {project.outcome}
+                                                </p>
+                                            </div>
+                                        )}
+                                    </div>
+                                )
                             )}
                         </div>
 
