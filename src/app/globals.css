@@ -1,123 +1,174 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900;1,9..40,300&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
 
 @import "tailwindcss";
 
 /* ─── Design Tokens ─────────────────────────────────────── */
 :root {
-  --bg: #faf9f6;
-  --fg: #1e1c1a;
-  --accent: #2a5cff;
-  --accent-glow: rgba(42, 92, 255, 0.13);
-  --muted: #a09e96;
-  --muted2: #c8c5bc;
-  --card-bg: #f0ede8;
-  --card-hover: #242220;
-  --border: #e2dfd8;
-  --surface: #f5f2ed;
+  --bg: #ffffff;
+  --fg: #333333;
+  --card-bg: #f7f7f9;
+  --border: #d1d1d1;
+  --nav-border: #e5e5e5;
+  --muted: #909090;
+  --accent: #0078ff;
+  --link-blue: #41a0ff;
+  --footer-bg: #171714;
+  --neon-lime: #d8ff52;
+
+  --font-helvetica: 'Helvetica Neue', Helvetica, Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sf: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  --font-sf-rounded: ui-rounded, 'SF Pro Rounded', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-/* ─── Reset ─────────────────────────────────────────────── */
+/* ─── Reset & Base ──────────────────────────────────────── */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  cursor: none;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Base ───────────────────────────────────────────────── */
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-helvetica);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   overflow-x: hidden;
+  margin: 0;
 }
 
-/* ─── Typography ─────────────────────────────────────────── */
-.display {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 0.01em;
+/* ─── Typography Utilities ──────────────────────────────── */
+.font-helvetica {
+  font-family: var(--font-helvetica);
 }
 
-/* ─── Custom Cursor ──────────────────────────────────────── */
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0.625rem;
-  height: 0.625rem;
-  background: var(--accent);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+.font-inter {
+  font-family: var(--font-inter);
 }
 
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 2.125rem;
-  height: 2.125rem;
-  border: 1.5px solid var(--accent);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: all 0.15s ease;
-  opacity: 0.45;
+.font-sf {
+  font-family: var(--font-sf);
 }
 
-.cursor.hovering {
-  width: 2.5rem;
-  height: 2.5rem;
-  opacity: 0.12;
+.font-sf-rounded {
+  font-family: var(--font-sf-rounded);
 }
 
-.cursor-ring.hovering {
-  opacity: 0;
+.font-mono-tech {
+  font-family: var(--font-mono);
 }
 
-/* ─── Scroll Animations ──────────────────────────────────── */
-.anim {
-  opacity: 0;
-}
-
-.anim.visible {
-  animation: fadeUp 0.7s ease forwards;
-}
-
-.d1 { animation-delay: 0.05s; }
-.d2 { animation-delay: 0.15s; }
-.d3 { animation-delay: 0.25s; }
-.d4 { animation-delay: 0.35s; }
-.d5 { animation-delay: 0.45s; }
-.d6 { animation-delay: 0.55s; }
-
-/* ─── Keyframes ──────────────────────────────────────────── */
-@keyframes fadeUp {
-  from {
+/* ─── Apple-style First-Load Entrance Animations ────────── */
+@keyframes bentoEnter {
+  0% {
     opacity: 0;
-    transform: translateY(1.5rem);
+    transform: translateY(22px) scale(0.975);
+    filter: blur(8px);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
   }
 }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+@keyframes navDropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.96);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.bento-enter {
+  opacity: 0;
+  animation: bentoEnter 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+.nav-enter {
+  opacity: 0;
+  animation: navDropIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.stagger-1 { animation-delay: 0.06s; }
+.stagger-2 { animation-delay: 0.14s; }
+.stagger-3 { animation-delay: 0.22s; }
+.stagger-4 { animation-delay: 0.30s; }
+.stagger-5 { animation-delay: 0.38s; }
+.stagger-6 { animation-delay: 0.46s; }
+.stagger-7 { animation-delay: 0.54s; }
+.stagger-8 { animation-delay: 0.62s; }
+.stagger-9 { animation-delay: 0.70s; }
+
+/* Subtle Apple-style widget hover physics */
+.bento-card {
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Apple iMessage Bubble Spring Animations ───────────── */
+@keyframes imessagePopLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-8px, 14px, 0) scale(0.78);
+  }
+  65% {
+    opacity: 1;
+    transform: translate3d(0, -1.5px, 0) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes imessagePopRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(8px, 14px, 0) scale(0.78);
+  }
+  65% {
+    opacity: 1;
+    transform: translate3d(0, -1.5px, 0) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.imessage-bubble-left {
+  transform-origin: bottom left;
+  animation: imessagePopLeft 0.36s cubic-bezier(0.22, 1.25, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.imessage-bubble-right {
+  transform-origin: bottom right;
+  animation: imessagePopRight 0.34s cubic-bezier(0.22, 1.25, 0.36, 1) forwards;
+  will-change: transform, opacity;
 }
 
 /* ─── Scrollbar ──────────────────────────────────────────── */
-::-webkit-scrollbar        { width: 3px; }
-::-webkit-scrollbar-track  { background: var(--bg); }
-::-webkit-scrollbar-thumb  { background: var(--accent); border-radius: 2px; }
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: #d1d1d1; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #a9a9a9; }
