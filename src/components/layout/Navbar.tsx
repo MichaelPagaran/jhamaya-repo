@@ -2,151 +2,66 @@
 
 import { useState } from "react";
 import { NAV_LINKS } from "@/constants";
-import { useScrollPosition } from "@/hooks/useScrollPosition";
 
 /**
- * Fixed top navigation bar.
- * - Shows a "J" monogram logo mark on the left.
- * - Pill-style nav with active-state highlight.
- * - "Contact Me" CTA on the right.
- * - Applies backdrop blur + bottom border after scrolling past 20px.
+ * Centered floating pill navigation matching Figma node 8:197.
+ * - Fixed consistent outer width (464px on desktop) and fixed per-item widths so switching
+ *   between Home, Projects, Stack, and Recommendations never shifts the pill width.
+ * - Generous spacing below the navbar before the Bento box starts.
  */
+const ITEM_WIDTHS: Record<string, string> = {
+    Home: "w-[90px]",
+    Projects: "w-[94px]",
+    Stack: "w-[82px]",
+    Recommendations: "w-[146px]",
+};
+
 export default function Navbar() {
     const [activeNav, setActiveNav] = useState("Home");
-    const scrollY = useScrollPosition();
-    const scrolled = scrollY > 20;
+
+    const handleNavClick = (label: string, href: string) => {
+        setActiveNav(label);
+        if (href === "#home" || href === "/") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        } else if (href.startsWith("#")) {
+            const el = document.getElementById(href.slice(1));
+            if (el) {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+    };
 
     return (
         <header
-            style={{
-                position: "fixed",
-                top: 0,
-                left: 0,
-                right: 0,
-                zIndex: 100,
-                padding: "0.875rem 3.25rem",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                background: scrolled
-                    ? "rgba(250,249,246,0.96)"
-                    : "rgba(250,249,246,0.88)",
-                backdropFilter: "blur(0.875rem)",
-                borderBottom: `1px solid ${scrolled ? "var(--border)" : "transparent"}`,
-                boxShadow: scrolled
-                    ? "0 0.125rem 1.5rem rgba(30,28,26,0.07)"
-                    : "none",
-                transition:
-                    "background .3s ease, border-bottom .3s ease, box-shadow .3s ease",
-            }}
+            className="nav-enter sticky top-[28px] z-50 mx-auto mb-[36px] flex w-full max-w-[1440px] items-center justify-center px-[20px] pt-[12px] sm:px-[56px]"
+            data-node-id="8:197"
+            data-name="Navigation"
         >
-            {/* Left: logo + pill nav */}
-            <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-                {/* J monogram */}
-                <div
-                    style={{
-                        width: "2rem",
-                        height: "2rem",
-                        background: "var(--accent)",
-                        borderRadius: "0.5rem",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontWeight: 900,
-                        color: "#fff",
-                        fontSize: "0.875rem",
-                        fontFamily: "'DM Sans', sans-serif",
-                        flexShrink: 0,
-                    }}
-                >
-                    J
-                </div>
-
-                {/* Pill nav */}
-                <nav
-                    style={{
-                        display: "flex",
-                        gap: "0.125rem",
-                        background: "var(--surface)",
-                        borderRadius: "6.25rem",
-                        padding: "0.25rem",
-                    }}
-                >
-                    {NAV_LINKS.map((link) => (
+            <nav
+                aria-label="Primary navigation"
+                className="flex w-[462px] max-w-full shrink-0 items-center justify-between gap-[6px] overflow-clip rounded-[99px] border border-[#e5e5e5] bg-white/95 px-[12px] py-[10px] shadow-[1px_1px_16.7px_-4px_rgba(0,0,0,0.15)] backdrop-blur-md"
+                data-node-id="8:201"
+                data-name="Links"
+            >
+                {NAV_LINKS.map((link) => {
+                    const isActive = activeNav === link.label;
+                    const widthClass = ITEM_WIDTHS[link.label] ?? "px-[16px]";
+                    return (
                         <button
                             key={link.label}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                setActiveNav(link.label);
-                                if (link.href === "/") {
-                                    window.scrollTo({ top: 0, behavior: "smooth" });
-                                } else if (link.href.startsWith("#")) {
-                                    const element = document.getElementById(link.href.substring(1));
-                                    if (element) {
-                                        element.scrollIntoView({ behavior: "smooth" });
-                                    }
-                                }
-                            }}
-                            style={{
-                                padding: "0.375rem 1.125rem",
-                                borderRadius: "6.25rem",
-                                border: "none",
-                                background:
-                                    activeNav === link.label
-                                        ? "#fff"
-                                        : "transparent",
-                                color:
-                                    activeNav === link.label
-                                        ? "var(--fg)"
-                                        : "var(--muted)",
-                                fontSize: "0.8125rem",
-                                fontWeight: activeNav === link.label ? 600 : 400,
-                                fontFamily: "'DM Sans', sans-serif",
-                                boxShadow:
-                                    activeNav === link.label
-                                        ? "0 0.0625rem 0.25rem rgba(30,28,26,0.07)"
-                                        : "none",
-                                transition: "all .2s ease",
-                            }}
+                            type="button"
+                            onClick={() => handleNavClick(link.label, link.href)}
+                            className={`font-inter flex h-[38px] ${widthClass} shrink-0 cursor-pointer items-center justify-center rounded-[999px] border text-[13px] font-semibold leading-normal whitespace-nowrap transition-colors duration-200 ${
+                                isActive
+                                    ? "border-[#e5e5e5] bg-[#e5e5e5] text-[#727580]"
+                                    : "border-transparent bg-transparent text-[#a9a9a9] hover:text-[#727580]"
+                            }`}
                         >
                             {link.label}
                         </button>
-                    ))}
-                </nav>
-            </div>
-
-            {/* Right: Contact CTA */}
-            <button
-                onClick={(e) => {
-                    e.preventDefault();
-                    const element = document.getElementById("cta");
-                    if (element) {
-                        element.scrollIntoView({ behavior: "smooth" });
-                    }
-                }}
-                style={{
-                    padding: "0.625rem 1.5rem",
-                    background: "var(--fg)",
-                    color: "var(--bg)",
-                    border: "none",
-                    borderRadius: "6.25rem",
-                    fontSize: "0.8125rem",
-                    fontWeight: 600,
-                    fontFamily: "'DM Sans', sans-serif",
-                    letterSpacing: "0.01em",
-                    transition: "background .2s ease",
-                }}
-                onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.background =
-                        "var(--accent)";
-                }}
-                onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.background =
-                        "var(--fg)";
-                }}
-            >
-                Contact Me
-            </button>
+                    );
+                })}
+            </nav>
         </header>
     );
 }

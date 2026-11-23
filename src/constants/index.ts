@@ -1,24 +1,23 @@
 import { NavLink } from "@/types";
 
 export const SITE_META = {
-    name: "Designer Portfolio",
+    name: "Jam — Product & Multidisciplinary Designer",
     description:
-        "Bringing clarity to technical products through design. Specializing in security, data, and enterprise products.",
+        "Designer based in the Philippines crafting clear, thoughtful digital experiences across product design, systems, and visual craft.",
     url: "https://yourportfolio.com",
 } as const;
 
 export const NAV_LINKS: NavLink[] = [
-    { label: "Home", href: "/" },
+    { label: "Home", href: "#home" },
     { label: "Projects", href: "#projects" },
-    { label: "Case Studies", href: "#case-studies" },
-    { label: "Process", href: "#process" },
-    { label: "Contact", href: "#cta" },
+    { label: "Stack", href: "#stack" },
+    { label: "Recommendations", href: "#recommendations" },
 ];
 
 export const SOCIAL_LINKS = [
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/jhamaya-santiago-41690b221/" },
-    { label: "Dribbble", href: "#" },
-    { label: "Twitter", href: "#" },
+    { label: "LINKEDIN ↗", href: "https://www.linkedin.com/in/jhamaya-santiago-41690b221/" },
+    { label: "ARE.NA ↗", href: "#" },
+    { label: "READ.CV ↗", href: "#" },
 ] as const;
 
 export const MARQUEE_ITEMS = [
