@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Project } from "@/types";
 import ClockWidget from "@/components/widgets/ClockWidget";
 import PhotosWidget from "@/components/widgets/PhotosWidget";
 import ChatWidget from "@/components/widgets/ChatWidget";
 import MusicWidget from "@/components/widgets/MusicWidget";
-import ProjectModal from "@/components/ui/ProjectModal";
 
 interface BentoHomeProps {
     projects: Project[];
@@ -24,12 +24,20 @@ interface BentoHomeProps {
  * - 3 Featured Project cards (iPhone Notification Center card, iPad Pro Landscape card, Wide Logomark card)
  */
 export default function BentoHome({ projects }: BentoHomeProps) {
-    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const router = useRouter();
     const [dismissedNotif, setDismissedNotif] = useState(false);
 
     const project1 = projects[0] ?? null;
     const project2 = projects[1] ?? null;
     const project3 = projects[2] ?? null;
+
+    const openProjectPage = (project: Project | null) => {
+        if (project) {
+            router.push(`/projects/${project.slug}`);
+        } else {
+            router.push("/projects");
+        }
+    };
 
     const scrollToSection = (id: string) => {
         const el = document.getElementById(id);
@@ -445,7 +453,7 @@ export default function BentoHome({ projects }: BentoHomeProps) {
                     <div className="grid grid-cols-1 gap-[18px] md:grid-cols-[429px_428px] md:justify-between">
                         {/* Project Card 1: iPhone + Notification Center (429 x 513) */}
                         <div
-                            onClick={() => project1 && setSelectedProject(project1)}
+                            onClick={() => openProjectPage(project1)}
                             className="bento-card bento-enter stagger-7 group relative h-[513px] w-full max-w-[429px] cursor-pointer overflow-clip rounded-[27px] bg-[#f7f7f9]"
                             data-node-id="21:3381"
                         >
@@ -618,7 +626,7 @@ export default function BentoHome({ projects }: BentoHomeProps) {
 
                         {/* Project Card 2: iPad Pro Landscape (428 x 513) */}
                         <div
-                            onClick={() => project2 && setSelectedProject(project2)}
+                            onClick={() => openProjectPage(project2)}
                             className="bento-card bento-enter stagger-8 group relative h-[513px] w-full max-w-[428px] cursor-pointer overflow-clip rounded-[27px] bg-[#f7f7f9]"
                             data-node-id="21:3387"
                         >
@@ -710,7 +718,7 @@ export default function BentoHome({ projects }: BentoHomeProps) {
 
                     {/* Bottom Wide Project Card 3: Centered Logomark (875 x 513) */}
                     <div
-                        onClick={() => project3 && setSelectedProject(project3)}
+                        onClick={() => openProjectPage(project3)}
                         className="bento-card bento-enter stagger-9 group relative h-[513px] w-full max-w-[875px] cursor-pointer overflow-clip rounded-[27px] bg-[#f7f7f9]"
                         data-node-id="63:8944"
                     >
@@ -744,14 +752,6 @@ export default function BentoHome({ projects }: BentoHomeProps) {
                     </div>
                 </div>
             </div>
-
-            {/* Project Case Study Modal when any project card is clicked */}
-            {selectedProject && (
-                <ProjectModal
-                    project={selectedProject}
-                    onClose={() => setSelectedProject(null)}
-                />
-            )}
         </section>
     );
 }

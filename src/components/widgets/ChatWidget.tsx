@@ -13,6 +13,7 @@ type TopicContext =
     | "projects_overview"
     | "aquila"
     | "dayung"
+    | "triplewisk"
     | "noli"
     | "case_studies"
     | "risk"
@@ -205,25 +206,31 @@ function generateConversationalAnswer(
     if (isAffirmativeOrMore) {
         if (lastTopic === "aquila") {
             return {
-                text: "so inside AQUILA, i tackled three major security workflows: Cyber Risk Management (making risk assessments 60% faster), Sniff & Detect (hitting 92% email threat scan accuracy), and Cyber Incident Management for SOC teams (cutting alert fatigue by 40%)! which one sounds most interesting to you? 😄",
+                text: "so inside AQUILA, we worked with the Research and Development Department to bring alert monitoring, guided incident investigations, risk analysis, and phishing assessments into one place! instead of jumping across different technical tools with tons of clicks, everything communicates clearly to the user 😄 want to hear about one of the specific security workflows?",
                 nextTopic: "case_studies",
             };
         }
         if (lastTopic === "projects_overview") {
             return {
-                text: "let's start with AQUILA (2024–2026)! it's an all-in-one enterprise cyber security platform where i led end-to-end product design and built a design system to keep devs and designers aligned. i also lead UX/UI for Dayung (an AI B2B SaaS for Philippine HOAs). wanna hear about Dayung or AQUILA's impact metrics?",
+                text: "let's start with AQUILA (2024 to 2026)! it's an all-in-one cyber security platform we built with the Research and Development Department so users don't have to deal with separate, overly technical tools and endless clicks across every security domain. there's also Dayung (an HOA Financial & Governance Management System passion project in May 2026). wanna hear more about AQUILA or Dayung?",
                 nextTopic: "aquila",
             };
         }
         if (lastTopic === "dayung") {
             return {
-                text: "the coolest part about Dayung is how we took super intimidating Philippine HOA & corporate compliance rules and turned them into friendly, AI-assisted financial workflows that non-technical users can actually enjoy using! 📊 want to hear about my Noli Me Tangere mobile game project next?",
+                text: "i also designed Dayung's logo around May 2026! i used a house silhouette to represent community, and chose a cyan-to-teal blue palette based on color psychology to represent trust, clarity, and transparency for HOA fine management and financial audits 📊 want to hear about TripleWisk or my Noli Me Tangere mobile game next?",
+                nextTopic: "triplewisk",
+            };
+        }
+        if (lastTopic === "triplewisk") {
+            return {
+                text: "for TripleWisk, i used Adobe Illustrator and Figma to design a playful logo with three whisks in one mixing bowl representing the three pastry chefs! we kept it warm and casual so customers never feel intimidated by the price and just feel welcomed to enjoy fresh quality pastries 🥐 want to hear about my Noli Me Tangere mobile game project next?",
                 nextTopic: "noli",
             };
         }
         if (lastTopic === "noli") {
             return {
-                text: "for the Noli Me Tangere game (2022–2023), we used human-centered design to blend historical Philippine literature with mobile game mechanics—so students were actually having fun and retaining the story instead of just memorizing chapters 🎮",
+                text: "for the Noli Me Tangere game (2022 to 2023), we used human-centered design to blend historical Philippine literature with mobile game mechanics, so students were actually having fun and retaining the story instead of just memorizing chapters 🎮",
                 nextTopic: "projects_overview",
             };
         }
@@ -248,21 +255,41 @@ function generateConversationalAnswer(
     // ─── B. Specific Portfolio Projects ───
     if (q.includes("aquila")) {
         return {
-            text: "oh, AQUILA is one of my biggest projects (2024–2026)! it's an all-in-one enterprise cyber security platform where i led the end-to-end design and built a scalable design system so our product and dev teams could ship faster together 🛡️ want to hear about the case studies from it too?",
+            text: "AQUILA (2024 to 2026) is an all-in-one cyber security platform built together with the Research and Development Department! in cyber security, every domain usually has a different tool in the market that's super technical and takes a lot of clicks, so we made AQUILA easy, unintimidating, and communicative for users. my role was leading the product design while contributing to the hands-on design and sign-off 🛡️ want to hear more about the workflows inside it?",
             nextTopic: "aquila",
         };
     }
 
-    if (q.includes("dayung") || q.includes("hoa") || q.includes("saas") || q.includes("financial")) {
+    if (q.includes("dayung") || q.includes("hoa") || q.includes("saas") || q.includes("financial") || q.includes("audit") || q.includes("fine")) {
         return {
-            text: "Dayung is an AI-powered B2B SaaS platform i've been designing since 2025! i handle the end-to-end UX/UI, turning super complex compliance rules, financial management, and asset tracking into simple tools for Philippine HOAs and corporate teams 📊 want me to share more about it?",
+            text: "Dayung is a passion project i made around May 2026! it's a Financial & Governance Management System for HOAs aimed at simplifying HOA fine management and financial audits for homeowners and staff. i also designed its house-silhouette logo using cyan/teal blue tones for trust and transparency 📊 want me to share more about the logo or product?",
             nextTopic: "dayung",
+        };
+    }
+
+    if (
+        q.includes("triplewisk") ||
+        q.includes("triple wisk") ||
+        q.includes("triplewhisk") ||
+        q.includes("triple whisk") ||
+        q.includes("thriple") ||
+        q.includes("whisk") ||
+        q.includes("wisk") ||
+        q.includes("pastry") ||
+        q.includes("pastries") ||
+        q.includes("bakery") ||
+        q.includes("dessert") ||
+        q.includes("chef")
+    ) {
+        return {
+            text: "TripleWisk is a logo and brand project i designed around October 2026 using Adobe Illustrator and Figma! the story behind it is super cool: it's run by 3 pastry chefs making desserts and pastries together, which is why there are 3 whisks in the bowl 🥣 their goal was to keep the vibe playful and not too formal so people don't get intimidated by the brand or assume it's overpriced, while serving fresh quality goods and great service!",
+            nextTopic: "triplewisk",
         };
     }
 
     if (q.includes("noli") || q.includes("rizal") || q.includes("game") || q.includes("educational")) {
         return {
-            text: "that was such a fun one! i designed an educational mobile game based on Jose Rizal's Noli Me Tangere (2022–2023). i balanced game mechanics and storytelling with human-centered UX so students actually stayed engaged while learning history 🎮",
+            text: "that was such a fun one! i designed an educational mobile game based on Jose Rizal's Noli Me Tangere (2022 to 2023). i balanced game mechanics and storytelling with human-centered UX so students actually stayed engaged while learning history 🎮",
             nextTopic: "noli",
         };
     }
@@ -270,7 +297,7 @@ function generateConversationalAnswer(
     // ─── C. Specific Case Studies ───
     if (q.includes("risk")) {
         return {
-            text: "for my Cyber Risk Management case study (2024), the workflow used to be super dense and hard to follow. i restructured the entire journey from risk identification to monitoring—which led to 60% faster risk assessments and a 95% usability task success rate! 📈",
+            text: "for my Cyber Risk Management case study (2024), the workflow used to be super dense and hard to follow. i restructured the entire journey from risk identification to monitoring, which led to 60% faster risk assessments and a 95% usability task success rate! 📈",
             nextTopic: "risk",
         };
     }
@@ -282,7 +309,7 @@ function generateConversationalAnswer(
     }
     if (q.includes("incident") || q.includes("soc") || q.includes("alert")) {
         return {
-            text: "for Cyber Incident & Management (2024–2026), i redesigned how SOC teams review alerts, investigate cases, and track response progress. it cut alert fatigue by 40% and saved about 3.5 minutes per incident! ⚡",
+            text: "for Cyber Incident & Management (2024 to 2026), i redesigned how SOC teams review alerts, investigate cases, and track response progress. it cut alert fatigue by 40% and saved about 3.5 minutes per incident! ⚡",
             nextTopic: "incident",
         };
     }
@@ -306,7 +333,7 @@ function generateConversationalAnswer(
         q.includes("what do you do")
     ) {
         return {
-            text: "i've worked across enterprise cyber security, AI B2B SaaS, and mobile games! my main projects here are the AQUILA Cyber Security Platform (2024–2026), Dayung (2025–Present), and the Noli Me Tangere Educational Game (2022–2023). want me to walk you through one of them? 😄",
+            text: "i've worked across enterprise cyber security, HOA SaaS, brand design, and mobile games! my main projects here are the AQUILA Cyber Security Platform (2024 to 2026), Dayung (May 2026), TripleWisk, and the Noli Me Tangere Educational Game (2022 to 2023). want me to walk you through one of them? 😄",
             nextTopic: "projects_overview",
         };
     }
@@ -360,7 +387,7 @@ function generateConversationalAnswer(
         q.includes("creativity")
     ) {
         return {
-            text: "honestly, i always start with the WHY before touching any pixels—because if we don't figure out the WHY first, the WHAT is just guessing 🤓☝️ i overthink a lot (that's lowkey where my creativity comes from!), and i try to design things that handle the stuff we don't enjoy and make the stuff we love even better!",
+            text: "honestly, i always start with the WHY before touching any pixels, because if we don't figure out the WHY first, the WHAT is just guessing 🤓☝️ i overthink a lot (that's lowkey where my creativity comes from!), and i try to design things that handle the stuff we don't enjoy and make the stuff we love even better!",
             nextTopic: "philosophy",
         };
     }
@@ -392,7 +419,7 @@ function generateConversationalAnswer(
         q.includes("timezone")
     ) {
         return {
-            text: `i'm based in the Philippines 🇵🇭 (UTC+8)! right now it's ${getFormattedManilaTime()} over here—synced live with my clock widget above 😄`,
+            text: `i'm based in the Philippines 🇵🇭 (UTC+8)! right now it's ${getFormattedManilaTime()} over here, synced live with my clock widget above 😄`,
             nextTopic: "general",
         };
     }

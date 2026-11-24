@@ -1,13 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { NAV_LINKS } from "@/constants";
 
 /**
- * Centered floating pill navigation matching Figma node 8:197.
- * - Fixed consistent outer width (464px on desktop) and fixed per-item widths so switching
+ * Centered floating pill navigation matching Figma node 8:197 and 121:1358.
+ * - Fixed consistent outer width (462px) and fixed per-item widths so switching
  *   between Home, Projects, Stack, and Recommendations never shifts the pill width.
- * - Generous spacing below the navbar before the Bento box starts.
+ * - Supports multi-page routing between `/` and `/projects` (and `/projects/[slug]`).
  */
 const ITEM_WIDTHS: Record<string, string> = {
     Home: "w-[90px]",
@@ -17,16 +18,44 @@ const ITEM_WIDTHS: Record<string, string> = {
 };
 
 export default function Navbar() {
+    const pathname = usePathname();
+    const router = useRouter();
     const [activeNav, setActiveNav] = useState("Home");
+
+    useEffect(() => {
+        if (pathname?.startsWith("/projects")) {
+            setActiveNav("Projects");
+        } else {
+            setActiveNav("Home");
+        }
+    }, [pathname]);
 
     const handleNavClick = (label: string, href: string) => {
         setActiveNav(label);
-        if (href === "#home" || href === "/") {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        } else if (href.startsWith("#")) {
-            const el = document.getElementById(href.slice(1));
-            if (el) {
-                el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        if (href === "/projects") {
+            router.push("/projects");
+            return;
+        }
+
+        if (href === "/") {
+            if (pathname === "/") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            } else {
+                router.push("/");
+            }
+            return;
+        }
+
+        if (href.startsWith("/#")) {
+            const targetId = href.slice(2);
+            if (pathname === "/") {
+                const el = document.getElementById(targetId);
+                if (el) {
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            } else {
+                router.push(href);
             }
         }
     };
