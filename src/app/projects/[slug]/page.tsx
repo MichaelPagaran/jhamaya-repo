@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Navbar, Footer } from "@/components/layout";
+import { Navbar } from "@/components/layout";
 import ProductCarousel from "@/components/widgets/ProductCarousel";
 import { getProjectBySlug, getAllProjects } from "@/lib/projects";
 import { getCaseStudies } from "@/lib/caseStudies";
@@ -325,8 +325,6 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                     )}
                 </div>
             </main>
-
-            <Footer />
         </div>
     );
 }

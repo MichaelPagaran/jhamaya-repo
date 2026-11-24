@@ -25,13 +25,6 @@ interface BentoHomeProps {
 export default function BentoHome({ projects: _projects }: BentoHomeProps) {
     void _projects;
 
-    const scrollToSection = (id: string) => {
-        const el = document.getElementById(id);
-        if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-        }
-    };
-
     return (
         <section
             id="home"
@@ -89,7 +82,7 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                             className="font-helvetica text-center text-[13px] font-bold leading-normal tracking-[-0.052px] text-[#3d3d3d] whitespace-nowrap"
                             data-node-id="16:1835"
                         >
-                            iloveyouvirus.txt
+                            about_me.txt
                         </p>
                     </div>
 
@@ -112,13 +105,12 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                             >
                                 <p className="m-0">
                                     <span>{`i am a designer based in the Philippines. well.., i do a lot of design stuff. when i say a lot. IT'S A LOT! `}</span>
-                                    <button
-                                        type="button"
-                                        onClick={() => scrollToSection("projects")}
-                                        className="font-helvetica cursor-pointer border-none bg-transparent p-0 italic text-[#41a0ff] underline decoration-solid [text-underline-position:from-font] transition-opacity hover:opacity-75"
+                                    <Link
+                                        href="/projects"
+                                        className="font-helvetica cursor-pointer italic text-[#41a0ff] underline decoration-solid [text-underline-position:from-font] transition-opacity hover:opacity-75"
                                     >
                                         (Click me!)
-                                    </button>
+                                    </Link>
                                 </p>
 
                                 <p className="m-0">
@@ -145,11 +137,7 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
 
                                 <div className="pt-[12px]">
                                     <a
-                                        href="#contact"
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            scrollToSection("contact");
-                                        }}
+                                        href="mailto:jhamayasantiago@gmail.com"
                                         className="inline-flex items-center text-[18px] leading-normal no-underline transition-opacity hover:opacity-75"
                                     >
                                         <span className="italic text-[#41a0ff]">✉️ let’s ta</span>

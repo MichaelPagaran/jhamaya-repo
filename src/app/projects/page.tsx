@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Navbar, Footer } from "@/components/layout";
+import { Navbar } from "@/components/layout";
 
 /**
  * Projects Page (`/projects`) matching Figma node 121:1354 ("Projects"):
@@ -515,8 +515,6 @@ export default function ProjectsPage() {
                     </div>
                 </section>
             </main>
-
-            <Footer />
         </div>
     );
 }

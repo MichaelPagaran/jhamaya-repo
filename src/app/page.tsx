@@ -1,4 +1,4 @@
-import { Navbar, Footer } from "@/components/layout";
+import { Navbar } from "@/components/layout";
 import BentoHome from "@/components/sections/BentoHome";
 import { getAllProjects } from "@/lib/projects";
 
@@ -11,7 +11,6 @@ export default async function Home() {
             <main>
                 <BentoHome projects={projects} />
             </main>
-            <Footer />
         </div>
     );
 }
