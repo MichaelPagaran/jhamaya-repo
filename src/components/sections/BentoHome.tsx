@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import RedirectArrow from "@/components/ui/RedirectArrow";
 import { Project } from "@/types";
 import ClockWidget from "@/components/widgets/ClockWidget";
 import PhotosWidget from "@/components/widgets/PhotosWidget";
@@ -440,12 +441,7 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                                         Financial &amp; Governance System for HOAs.
                                     </p>
                                     <div className="absolute right-0 top-0 size-[48px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-105">
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
-                                            alt="View Dayung project"
-                                            className="block size-full max-w-none"
-                                            src="/figma/redirection-56.svg"
-                                        />
+                                        <RedirectArrow label="View Dayung project" accent="#06a9ab" />
                                     </div>
                                 </div>
                                 <div className="relative h-px w-full">
@@ -551,12 +547,7 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                                         All-in-One Cyber Security Platform
                                     </p>
                                     <div className="absolute right-0 top-0 size-[48px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-105">
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
-                                            alt="View AQUILA project"
-                                            className="block size-full max-w-none"
-                                            src="/figma/redirection-56.svg"
-                                        />
+                                        <RedirectArrow label="View AQUILA project" accent="#0078ff" />
                                     </div>
                                 </div>
                                 <div className="relative h-px w-full">
@@ -627,12 +618,7 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                                     Home-made fresh goods.
                                 </p>
                                 <div className="absolute right-0 top-0 size-[56px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-105">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                        alt="View TripleWisk project"
-                                        className="block size-full max-w-none"
-                                        src="/figma/redirection-56.svg"
-                                    />
+                                    <RedirectArrow label="View TripleWisk project" accent="#e5a54b" />
                                 </div>
                             </div>
                             <div className="relative h-px w-full">
