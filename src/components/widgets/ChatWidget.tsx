@@ -755,7 +755,7 @@ export default function ChatWidget() {
 
     return (
         <div
-            className="bento-card font-sf relative flex h-[301px] w-full max-w-[650px] flex-col justify-between overflow-clip rounded-[27px] border border-[#d1d1d1] bg-white py-[8px]"
+            className="bento-card font-sf relative flex min-h-[301px] flex-1 w-full max-w-[650px] flex-col justify-between overflow-clip rounded-[27px] border border-[#d1d1d1] bg-white py-[8px]"
             data-node-id="16:2020"
         >
             {/* Chat Thread Area */}

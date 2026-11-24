@@ -150,7 +150,7 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                 </div>
 
                 {/* Right Column: Top Row (Clock + Photos) & Bottom Row (iMessage Chat) */}
-                <div className="flex w-full flex-col justify-between gap-[15px]">
+                <div className="flex w-full flex-col gap-[15px]">
                     <div className="flex flex-wrap items-center justify-center gap-[21px] sm:flex-nowrap xl:justify-between">
                         <div className="bento-enter stagger-2">
                             <ClockWidget />
@@ -160,7 +160,7 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                         </div>
                     </div>
 
-                    <div className="bento-enter stagger-4">
+                    <div className="bento-enter stagger-4 flex flex-1 flex-col">
                         <ChatWidget />
                     </div>
                 </div>
