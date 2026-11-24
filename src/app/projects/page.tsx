@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import RedirectArrow from "@/components/ui/RedirectArrow";
 import { Navbar } from "@/components/layout";
 
 /**
@@ -106,12 +107,7 @@ export default function ProjectsPage() {
                                         className="absolute right-0 top-0 size-[56px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-105"
                                         data-node-id="121:1483"
                                     >
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
-                                            alt="View AQUILA project"
-                                            className="block size-full max-w-none"
-                                            src="/figma/redirection-56.svg"
-                                        />
+                                        <RedirectArrow label="View AQUILA project" accent="#0078ff" />
                                     </div>
                                 </div>
                                 <div className="relative h-px w-full">
@@ -193,12 +189,7 @@ export default function ProjectsPage() {
                                         className="absolute right-0 top-0 size-[56px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-105"
                                         data-node-id="121:1493"
                                     >
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
-                                            alt="View Dayung project"
-                                            className="block size-full max-w-none"
-                                            src="/figma/redirection-56.svg"
-                                        />
+                                        <RedirectArrow label="View Dayung project" accent="#06a9ab" />
                                     </div>
                                 </div>
                                 <div className="relative h-px w-full">
@@ -331,12 +322,7 @@ export default function ProjectsPage() {
                                         className="absolute right-0 top-0 size-[56px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-105"
                                         data-node-id="121:1818"
                                     >
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
-                                            alt="View Dayung Brand Identity"
-                                            className="block size-full max-w-none"
-                                            src="/figma/redirection-56.svg"
-                                        />
+                                        <RedirectArrow label="View Dayung Brand Identity" accent="#06a9ab" />
                                     </div>
                                 </div>
                                 <div className="relative h-px w-full">
@@ -449,18 +435,13 @@ export default function ProjectsPage() {
                                         className="font-helvetica text-[14px] font-normal leading-normal tracking-[-0.84px] text-[#909090]"
                                         data-node-id="121:1827"
                                     >
-                                        Home-made fresh goods.
+                                        Homemade fresh goods.
                                     </p>
                                     <div
                                         className="absolute right-0 top-0 size-[56px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-105"
                                         data-node-id="121:1828"
                                     >
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
-                                            alt="View TripleWisk project"
-                                            className="block size-full max-w-none"
-                                            src="/figma/redirection-56.svg"
-                                        />
+                                        <RedirectArrow label="View TripleWisk project" accent="#e5a54b" />
                                     </div>
                                 </div>
                                 <div className="relative h-px w-full">
