@@ -615,7 +615,7 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                                     TripleWisk
                                 </h3>
                                 <p className="font-helvetica text-[14px] font-normal leading-normal tracking-[-0.84px] text-[#909090]">
-                                    Home-made fresh goods.
+                                    Homemade fresh goods.
                                 </p>
                                 <div className="absolute right-0 top-0 size-[56px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-105">
                                     <RedirectArrow label="View TripleWisk project" accent="#e5a54b" />

@@ -435,7 +435,7 @@ export default function ProjectsPage() {
                                         className="font-helvetica text-[14px] font-normal leading-normal tracking-[-0.84px] text-[#909090]"
                                         data-node-id="121:1827"
                                     >
-                                        Home-made fresh goods.
+                                        Homemade fresh goods.
                                     </p>
                                     <div
                                         className="absolute right-0 top-0 size-[56px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-105"

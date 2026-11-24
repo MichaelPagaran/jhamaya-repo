@@ -118,7 +118,7 @@ export async function getAllProjects(): Promise<Project[]> {
         {
             slug: "triplewisk",
             title: "TripleWisk",
-            subtitle: "Home-made fresh goods.",
+            subtitle: "Homemade fresh goods.",
             description:
                 "I designed the logo and brand identity for TripleWisk, a bakery started by three pastry chefs who wanted a playful, welcoming brand that never feels intimidating or overpriced.",
             category: "graphic-design",
