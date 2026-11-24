@@ -262,7 +262,7 @@ function generateConversationalAnswer(
 
     if (q.includes("dayung") || q.includes("hoa") || q.includes("saas") || q.includes("financial") || q.includes("audit") || q.includes("fine")) {
         return {
-            text: "Dayung is a passion project i made around May 2026! it's a Financial & Governance Management System for HOAs aimed at simplifying HOA fine management and financial audits for homeowners and staff. i also designed its house-silhouette logo using cyan/teal blue tones for trust and transparency 📊 want me to share more about the logo or product?",
+            text: "Dayung is a passion project we built around May 2026 with a developer! it's a Financial & Governance Management System for HOAs aimed at simplifying HOA fine management, property registries, facility bookings, and financial audits for homeowners and staff. i also designed its house-silhouette logo using cyan/teal blue tones for trust and transparency 📊 want me to share more about the logo or product?",
             nextTopic: "dayung",
         };
     }

@@ -54,44 +54,40 @@ export async function getAllProjects(): Promise<Project[]> {
             title: "Dayung",
             subtitle: "Financial & Governance Management System for HOAs.",
             description:
-                "A passion project I built to make managing HOA fines, monthly dues, and financial audits simple and clear for both homeowners and staff.",
+                "A passion project we built to make managing HOA fines, property registries, facility bookings, and financial audits simple and clear for both homeowners and staff.",
             category: "product-design",
             tag: "B2B SaaS · Passion Project",
             tags: ["HOA Governance", "Financial Audit", "Product UX/UI"],
             date: "2026-05-01",
             year: "May 2026",
             role: "Product Designer (UX/UI)",
-            teammate: "Passion Project",
+            teammate: "Developer",
             tools: "Figma",
             timeline: "May 2026",
             context: [
                 "Managing community finances in a Homeowners Association usually means dealing with messy spreadsheets and paper receipts. Staff spend hours tracking down unpaid fines, and homeowners rarely get a clear picture of where their money goes.",
-                "I started Dayung in May 2026 as a passion project to fix that. It is a Financial and Governance Management System built to make fine tracking, dues collection, and financial audits straightforward for everyone in the community.",
+                "We started Dayung in May 2026 as a passion project alongside a developer to fix that. It is a Financial and Governance Management System built to make fine tracking, dues collection, facility management, and financial audits straightforward for everyone in the community.",
             ],
             intro: [
-                "In most neighborhoods, preparing for an annual audit is stressful because records are scattered across different files. When people cannot see how funds are handled, it creates unnecessary friction between the board and the residents.",
-                "I designed Dayung so non-technical staff and homeowners can log expenses, check fine statuses, and review audit trails without needing an accounting background. The goal was simple: keep the workflows fast, easy to follow, and completely transparent.",
+                "In most neighborhoods, preparing for an annual audit is stressful because records are scattered across different files. When people cannot see how funds, facility income, or property balances are handled, it creates unnecessary friction between the board and the residents.",
+                "We designed Dayung so non-technical staff and homeowners can review property details, track overdue balances, schedule community facilities, and check expense and income audit trails without needing an accounting background. Our goal was simple: keep the workflows fast, easy to follow, and completely transparent.",
             ],
             screenshots: [
-                "/figma/dayung-macbook.png",
-                "/dayung-mockup.png",
-                "/dayung-1cover.jpg",
+                "/dayung/dayung-1-property-details.jpg",
+                "/dayung/dayung-2-facilities.jpg",
+                "/dayung/dayung-3-facility-details.jpg",
             ],
             figmaUrl: "#",
             contributions: [
-                "Designed the end-to-end UX/UI for the HOA Financial and Governance Management System, focusing on simple HOA fine management and audit-ready financial tracking.",
-                "Turned complicated HOA governance and auditing steps into clean, easy workflows for homeowners and staff.",
+                "Designed the end-to-end UX/UI with a developer for the HOA Financial and Governance Management System, focusing on simple HOA fine management and audit-ready financial tracking.",
+                "Turned complicated HOA governance, property registry, facility scheduling, and auditing steps into clean, easy workflows for homeowners and staff.",
             ],
             challenge:
-                "Tracking HOA fines and preparing for financial audits is often messy and confusing for non-technical community staff and homeowners.",
+                "Tracking HOA fines, facility income, and preparing for financial audits is often messy and confusing for non-technical community staff and homeowners.",
             whatIDid:
-                "Designed a clean, guided interface for logging transactions, managing fines, and keeping financial records ready for audit at any time.",
+                "Worked closely with a developer to design a clean, guided interface for managing property balances, facility reservations, expenses, and audit-ready financial records.",
             outcome:
-                "An easy-to-use system that gives both HOA staff and residents clear visibility into community finances.",
-            kpis: [
-                { value: "May 2026", label: "Passion Project" },
-                { value: "100%", label: "Audit & Fine Transparency" },
-            ],
+                "An easy-to-use system that gives both HOA staff and residents clear visibility into community finances and daily operations.",
         },
         {
             slug: "dayung-brand",
