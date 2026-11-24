@@ -161,8 +161,12 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                         </div>
                     </div>
 
-                    <div className="bento-enter stagger-4 flex flex-1 flex-col">
-                        <ChatWidget />
+                    {/* Fixed-size slot: the chat fills the space left by the row above and
+                        scrolls internally, so a long conversation never grows the layout. */}
+                    <div className="bento-enter stagger-4 relative min-h-[301px] flex-1">
+                        <div className="absolute inset-0 flex flex-col">
+                            <ChatWidget />
+                        </div>
                     </div>
                 </div>
             </div>

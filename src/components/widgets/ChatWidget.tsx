@@ -761,7 +761,7 @@ export default function ChatWidget() {
             {/* Chat Thread Area */}
             <div
                 ref={threadRef}
-                className="flex flex-1 flex-col gap-[8px] overflow-y-auto bg-white pl-[16px] pr-[14px]"
+                className="flex min-h-0 flex-1 flex-col gap-[8px] overflow-y-auto bg-white pl-[16px] pr-[14px]"
                 data-node-id="60:7990"
             >
                 {/* Real-Time Philippine Time Timestamp (Synced with Clock Widget) */}
