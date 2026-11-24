@@ -33,7 +33,7 @@ const INITIAL_MESSAGES: ChatMessage[] = [
     },
 ];
 
-const CONTACT_EMAIL = "hello@yourname.design";
+const CONTACT_EMAIL = "jhamayasantiago@gmail.com";
 
 function getFormattedManilaTime(): string {
     try {
@@ -206,38 +206,32 @@ function generateConversationalAnswer(
     if (isAffirmativeOrMore) {
         if (lastTopic === "aquila") {
             return {
-                text: "so inside AQUILA, we worked with the Research and Development Department to bring alert monitoring, guided incident investigations, risk analysis, and phishing assessments into one place! instead of jumping across different technical tools with tons of clicks, everything communicates clearly to the user 😄 want to hear about one of the specific security workflows?",
-                nextTopic: "case_studies",
+                text: "inside AQUILA, we unified risk tracking, alert monitoring, guided incident investigations, and phishing assessments into one low-click platform so security teams don't get overwhelmed 😄 want a quick summary of Dayung or TripleWisk next?",
+                nextTopic: "dayung",
             };
         }
         if (lastTopic === "projects_overview") {
             return {
-                text: "let's start with AQUILA (2024 to 2026)! it's an all-in-one cyber security platform we built with the Research and Development Department so users don't have to deal with separate, overly technical tools and endless clicks across every security domain. there's also Dayung (an HOA Financial & Governance Management System passion project in May 2026). wanna hear more about AQUILA or Dayung?",
+                text: "here's the quick rundown: AQUILA (2024 to 2026) is an all-in-one cyber security platform built with R&D, Dayung (May 2026) is an HOA financial & governance system built with a developer, and TripleWisk (Oct 2026) is a playful bakery brand for 3 pastry chefs! which one do you wanna hear about? 😄",
                 nextTopic: "aquila",
             };
         }
         if (lastTopic === "dayung") {
             return {
-                text: "i also designed Dayung's logo around May 2026! i used a house silhouette to represent community, and chose a cyan-to-teal blue palette based on color psychology to represent trust, clarity, and transparency for HOA fine management and financial audits 📊 want to hear about TripleWisk or my Noli Me Tangere mobile game next?",
+                text: "for Dayung's brand (May 2026), i also designed a house-silhouette logo in cyan and teal blue based on color psychology for trust and transparency! want to hear about TripleWisk next?",
                 nextTopic: "triplewisk",
             };
         }
         if (lastTopic === "triplewisk") {
             return {
-                text: "for TripleWisk, i used Adobe Illustrator and Figma to design a playful logo with three whisks in one mixing bowl representing the three pastry chefs! we kept it warm and casual so customers never feel intimidated by the price and just feel welcomed to enjoy fresh quality pastries 🥐 want to hear about my Noli Me Tangere mobile game project next?",
-                nextTopic: "noli",
+                text: "i made TripleWisk's logo and social visuals in Illustrator and Figma with a whisk-dotted wordmark and warm golden-honey tones so the brand feels friendly and freshly baked 🥐 want to know about the tools i use?",
+                nextTopic: "tools",
             };
         }
         if (lastTopic === "noli") {
             return {
-                text: "for the Noli Me Tangere game (2022 to 2023), we used human-centered design to blend historical Philippine literature with mobile game mechanics, so students were actually having fun and retaining the story instead of just memorizing chapters 🎮",
+                text: "we blended Philippine history with mobile game mechanics so students stayed engaged instead of just memorizing chapters 🎮",
                 nextTopic: "projects_overview",
-            };
-        }
-        if (lastTopic === "case_studies" || lastTopic === "risk" || lastTopic === "sniff" || lastTopic === "incident") {
-            return {
-                text: "across those case studies, my main focus was taking super dense technical data and structuring it around what the user actually needs to decide first. you can click any of the project cards below to see the full mockups too! 😄",
-                nextTopic: "general",
             };
         }
         if (lastTopic === "tools") {
@@ -247,22 +241,48 @@ function generateConversationalAnswer(
             };
         }
         return {
-            text: "awesome!! 😄 do you want to hear about my projects (AQUILA, Dayung, Noli Me Tangere), my design process, or the tools i use?",
+            text: "awesome!! 😄 do you want a quick summary of my projects (AQUILA, Dayung, TripleWisk), my design process, or the tools i use?",
             nextTopic: "projects_overview",
         };
     }
 
-    // ─── B. Specific Portfolio Projects ───
-    if (q.includes("aquila")) {
+    // ─── B. Specific Portfolio Projects (Summarized) ───
+    if (
+        q.includes("dayung") &&
+        (q.includes("triplewisk") || q.includes("triplewhisk") || q.includes("whisk") || q.includes("wisk"))
+    ) {
         return {
-            text: "AQUILA (2024 to 2026) is an all-in-one cyber security platform built together with the Research and Development Department! in cyber security, every domain usually has a different tool in the market that's super technical and takes a lot of clicks, so we made AQUILA easy, unintimidating, and communicative for users. my role was leading the product design while contributing to the hands-on design and sign-off 🛡️ want to hear more about the workflows inside it?",
+            text: "Dayung (May 2026) is an HOA financial & governance system we built with a developer (plus its house-silhouette logo for trust & transparency), while TripleWisk (Oct 2026) is a playful bakery brand i designed in Illustrator & Figma for 3 pastry chefs! 😄",
+            nextTopic: "dayung",
+        };
+    }
+
+    if (
+        q.includes("aquila") ||
+        q.includes("cyber") ||
+        q.includes("security") ||
+        q.includes("soc") ||
+        q.includes("alert") ||
+        q.includes("risk")
+    ) {
+        return {
+            text: "AQUILA (2024 to 2026) is an all-in-one cyber security platform we built with the Research and Development Department! instead of using separate, overly technical tools with tons of clicks for every domain, we made one easy, communicative workspace. i led the product design and contributed to design and sign-off 🛡️",
             nextTopic: "aquila",
         };
     }
 
-    if (q.includes("dayung") || q.includes("hoa") || q.includes("saas") || q.includes("financial") || q.includes("audit") || q.includes("fine")) {
+    if (
+        q.includes("dayung") ||
+        q.includes("hoa") ||
+        q.includes("saas") ||
+        q.includes("financial") ||
+        q.includes("audit") ||
+        q.includes("fine") ||
+        q.includes("facility") ||
+        q.includes("property")
+    ) {
         return {
-            text: "Dayung is a passion project we built around May 2026 with a developer! it's a Financial & Governance Management System for HOAs aimed at simplifying HOA fine management, property registries, facility bookings, and financial audits for homeowners and staff. i also designed its house-silhouette logo using cyan/teal blue tones for trust and transparency 📊 want me to share more about the logo or product?",
+            text: "Dayung (May 2026) is an HOA Financial & Governance passion project we built with a developer to make tracking fines, property balances, facilities, and audits super clear and easy. i also designed its house-silhouette logo using cyan and teal for trust and transparency 📊",
             nextTopic: "dayung",
         };
     }
@@ -282,47 +302,19 @@ function generateConversationalAnswer(
         q.includes("chef")
     ) {
         return {
-            text: "TripleWisk is a logo and brand project i designed around October 2026 using Adobe Illustrator and Figma! the story behind it is super cool: it's run by 3 pastry chefs making desserts and pastries together, which is why there are 3 whisks in the bowl 🥣 their goal was to keep the vibe playful and not too formal so people don't get intimidated by the brand or assume it's overpriced, while serving fresh quality goods and great service!",
+            text: "TripleWisk (Oct 2026) is a bakery brand i designed in Illustrator and Figma for 3 pastry chefs, which is why there are 3 whisks in one bowl! we kept it playful and casual so customers never feel intimidated by the price and just enjoy fresh quality goods 🥣",
             nextTopic: "triplewisk",
         };
     }
 
     if (q.includes("noli") || q.includes("rizal") || q.includes("game") || q.includes("educational")) {
         return {
-            text: "that was such a fun one! i designed an educational mobile game based on Jose Rizal's Noli Me Tangere (2022 to 2023). i balanced game mechanics and storytelling with human-centered UX so students actually stayed engaged while learning history 🎮",
+            text: "i designed an educational mobile game for Jose Rizal's Noli Me Tangere (2022 to 2023), balancing storytelling and game UX so students had fun learning history 🎮",
             nextTopic: "noli",
         };
     }
 
-    // ─── C. Specific Case Studies ───
-    if (q.includes("risk")) {
-        return {
-            text: "for my Cyber Risk Management case study (2024), the workflow used to be super dense and hard to follow. i restructured the entire journey from risk identification to monitoring, which led to 60% faster risk assessments and a 95% usability task success rate! 📈",
-            nextTopic: "risk",
-        };
-    }
-    if (q.includes("sniff") || q.includes("detect") || q.includes("phish") || q.includes("scan")) {
-        return {
-            text: "in Sniff and Detect (2023), the challenge was making technical email security scans understandable for everyday employees without losing depth. simplifying and prioritizing the results helped hit 92% scan accuracy and an 85% response rate! 🔍",
-            nextTopic: "sniff",
-        };
-    }
-    if (q.includes("incident") || q.includes("soc") || q.includes("alert")) {
-        return {
-            text: "for Cyber Incident & Management (2024 to 2026), i redesigned how SOC teams review alerts, investigate cases, and track response progress. it cut alert fatigue by 40% and saved about 3.5 minutes per incident! ⚡",
-            nextTopic: "incident",
-        };
-    }
-
-    // ─── D. General Case Studies / Metrics ───
-    if (q.includes("case stud") || q.includes("metric") || q.includes("kpi") || q.includes("impact") || q.includes("result")) {
-        return {
-            text: "i love measuring design impact! across my security case studies, we hit 60% faster risk assessments (95% task success) in Cyber Risk Management, 92% scan accuracy in Sniff & Detect, and 40% less alert fatigue (saving 3.5 min/incident) in Cyber Incident Management ✨",
-            nextTopic: "case_studies",
-        };
-    }
-
-    // ─── E. General Projects / Work / Experience ───
+    // ─── C. General Projects / Work / Experience (Summarized) ───
     if (
         q.includes("project") ||
         q.includes("work") ||
@@ -333,7 +325,7 @@ function generateConversationalAnswer(
         q.includes("what do you do")
     ) {
         return {
-            text: "i've worked across enterprise cyber security, HOA SaaS, brand design, and mobile games! my main projects here are the AQUILA Cyber Security Platform (2024 to 2026), Dayung (May 2026), TripleWisk, and the Noli Me Tangere Educational Game (2022 to 2023). want me to walk you through one of them? 😄",
+            text: "my featured works right now are AQUILA (an all-in-one cyber security platform, 2024 to 2026), Dayung (an HOA financial & governance system + brand identity, May 2026), and TripleWisk (a playful bakery brand for 3 pastry chefs, Oct 2026)! want a quick summary of any of them? 😄",
             nextTopic: "projects_overview",
         };
     }
@@ -622,9 +614,9 @@ function renderMessageContent(text: string) {
 
 const QUICK_PROMPTS = [
     "Tell me about your projects",
+    "What is AQUILA?",
+    "Tell me about Dayung & TripleWisk",
     "What tools are in your stack?",
-    "How do you approach design?",
-    "Case studies & impact?",
 ];
 
 /**
