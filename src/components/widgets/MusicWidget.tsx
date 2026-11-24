@@ -297,7 +297,7 @@ export default function MusicWidget() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     src="/audio/good-days-cover.jpg"
-                    alt="Good Days — SZA"
+                    alt="Good Days by SZA"
                     className={`size-full object-cover transition-transform duration-700 ease-out ${
                         isHovered || isPlaying ? "scale-[1.03]" : "scale-100"
                     }`}

@@ -1,12 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
 import { Project } from "@/types";
 import ClockWidget from "@/components/widgets/ClockWidget";
 import PhotosWidget from "@/components/widgets/PhotosWidget";
 import ChatWidget from "@/components/widgets/ChatWidget";
 import MusicWidget from "@/components/widgets/MusicWidget";
-import ProjectModal from "@/components/ui/ProjectModal";
 
 interface BentoHomeProps {
     projects: Project[];
@@ -19,24 +18,12 @@ interface BentoHomeProps {
  * - Real-time Philippine Time (`Asia/Manila`) analog Clock widget
  * - Interactive Apple Photos widget with 4 photos & glassmorphic dock tab bar
  * - Interactive iMessage Chat widget
- * - "Another Widget" card
+ * - SZA Music Widget card
  * - "Tools" stack card with exact app icon groups
- * - 3 Featured Project cards (iPhone Notification Center card, iPad Pro Landscape card, Wide Logomark card)
+ * - 3 Featured Project cards (Dayung + AQUILA on top, TripleWisk wide card on bottom)
  */
-export default function BentoHome({ projects }: BentoHomeProps) {
-    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-    const [dismissedNotif, setDismissedNotif] = useState(false);
-
-    const project1 = projects[0] ?? null;
-    const project2 = projects[1] ?? null;
-    const project3 = projects[2] ?? null;
-
-    const scrollToSection = (id: string) => {
-        const el = document.getElementById(id);
-        if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-        }
-    };
+export default function BentoHome({ projects: _projects }: BentoHomeProps) {
+    void _projects;
 
     return (
         <section
@@ -95,7 +82,7 @@ export default function BentoHome({ projects }: BentoHomeProps) {
                             className="font-helvetica text-center text-[13px] font-bold leading-normal tracking-[-0.052px] text-[#3d3d3d] whitespace-nowrap"
                             data-node-id="16:1835"
                         >
-                            iloveyouvirus.txt
+                            about_me.txt
                         </p>
                     </div>
 
@@ -118,13 +105,12 @@ export default function BentoHome({ projects }: BentoHomeProps) {
                             >
                                 <p className="m-0">
                                     <span>{`i am a designer based in the Philippines. well.., i do a lot of design stuff. when i say a lot. IT'S A LOT! `}</span>
-                                    <button
-                                        type="button"
-                                        onClick={() => scrollToSection("projects")}
-                                        className="font-helvetica cursor-pointer border-none bg-transparent p-0 italic text-[#41a0ff] underline decoration-solid [text-underline-position:from-font] transition-opacity hover:opacity-75"
+                                    <Link
+                                        href="/projects"
+                                        className="font-helvetica cursor-pointer italic text-[#41a0ff] underline decoration-solid [text-underline-position:from-font] transition-opacity hover:opacity-75"
                                     >
                                         (Click me!)
-                                    </button>
+                                    </Link>
                                 </p>
 
                                 <p className="m-0">
@@ -151,11 +137,7 @@ export default function BentoHome({ projects }: BentoHomeProps) {
 
                                 <div className="pt-[12px]">
                                     <a
-                                        href="#contact"
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            scrollToSection("contact");
-                                        }}
+                                        href="mailto:jhamayasantiago@gmail.com"
                                         className="inline-flex items-center text-[18px] leading-normal no-underline transition-opacity hover:opacity-75"
                                     >
                                         <span className="italic text-[#41a0ff]">✉️ let’s ta</span>
@@ -168,7 +150,7 @@ export default function BentoHome({ projects }: BentoHomeProps) {
                 </div>
 
                 {/* Right Column: Top Row (Clock + Photos) & Bottom Row (iMessage Chat) */}
-                <div className="flex w-full flex-col justify-between gap-[15px]">
+                <div className="flex w-full flex-col gap-[15px]">
                     <div className="flex flex-wrap items-center justify-center gap-[21px] sm:flex-nowrap xl:justify-between">
                         <div className="bento-enter stagger-2">
                             <ClockWidget />
@@ -178,7 +160,7 @@ export default function BentoHome({ projects }: BentoHomeProps) {
                         </div>
                     </div>
 
-                    <div className="bento-enter stagger-4">
+                    <div className="bento-enter stagger-4 flex flex-1 flex-col">
                         <ChatWidget />
                     </div>
                 </div>
@@ -439,319 +421,266 @@ export default function BentoHome({ projects }: BentoHomeProps) {
                     </div>
                 </div>
 
-                {/* Right Column (875px wide): 2 Top Project Cards (429 + 428) + 1 Wide Bottom Project Card (875) */}
+                {/* Right Column (875px wide): Top Row (Dayung + AQUILA) + Bottom Wide Card (TripleWhisk) */}
                 <div id="projects" className="flex w-full flex-col gap-[14px]">
-                    {/* Top 2 Project Cards Row */}
+                    {/* Top 2 Featured Project Cards Row (Dayung + AQUILA) */}
                     <div className="grid grid-cols-1 gap-[18px] md:grid-cols-[429px_428px] md:justify-between">
-                        {/* Project Card 1: iPhone + Notification Center (429 x 513) */}
-                        <div
-                            onClick={() => project1 && setSelectedProject(project1)}
-                            className="bento-card bento-enter stagger-7 group relative h-[513px] w-full max-w-[429px] cursor-pointer overflow-clip rounded-[27px] bg-[#f7f7f9]"
-                            data-node-id="21:3381"
+                        {/* Featured Card 1: Dayung (429 x 513) */}
+                        <Link
+                            href="/projects/dayung"
+                            className="bento-card bento-enter stagger-7 group relative block h-[513px] w-full max-w-[429px] overflow-clip rounded-[27px] bg-[#f7f7f9] no-underline"
                         >
-                            {/* Tilted iPhone Mockup */}
-                            <div
-                                className="absolute left-[-140px] top-[164px] size-[648.979px] transition-transform duration-500 ease-out group-hover:translate-y-[-6px] group-hover:scale-[1.015]"
-                                data-node-id="23:3416"
-                                data-name="iPhone"
-                            >
-                                <div className="absolute left-[-26.34px] top-[31.98px] flex h-[590.956px] w-[428.386px] items-center justify-center">
-                                    <div className="flex-none rotate-[3.05deg]">
-                                        <div
-                                            className="relative h-[570.563px] w-[398.605px]"
-                                            style={{
-                                                WebkitMaskImage: `url("/figma/iphone-mask.svg")`,
-                                                maskImage: `url("/figma/iphone-mask.svg")`,
-                                                WebkitMaskSize: "648.979px 648.979px",
-                                                maskSize: "648.979px 648.979px",
-                                                WebkitMaskPosition: "-113.66px -31.978px",
-                                                maskPosition: "-113.66px -31.978px",
-                                                WebkitMaskRepeat: "no-repeat",
-                                                maskRepeat: "no-repeat",
-                                            }}
-                                        >
-                                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                                            <img
-                                                alt=""
-                                                className="absolute inset-0 block size-full max-w-none"
-                                                src="/figma/iphone-fix.svg"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="absolute left-[-239.47px] top-[-12.66px] flex h-[674.303px] w-[1127.882px] items-center justify-center">
-                                    <div className="flex-none rotate-[3.05deg]">
-                                        <div
-                                            className="relative h-[616.853px] w-[1096.627px]"
-                                            style={{
-                                                WebkitMaskImage: `url("/figma/iphone-mask.svg")`,
-                                                maskImage: `url("/figma/iphone-mask.svg")`,
-                                                WebkitMaskSize: "648.979px 648.979px",
-                                                maskSize: "648.979px 648.979px",
-                                                WebkitMaskPosition: "239.452px 12.662px",
-                                                maskPosition: "239.452px 12.662px",
-                                                WebkitMaskRepeat: "no-repeat",
-                                                maskRepeat: "no-repeat",
-                                            }}
-                                        >
-                                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                                            <img
-                                                alt=""
-                                                className="pointer-events-none absolute inset-0 size-full max-w-none object-cover"
-                                                src="/figma/iphone-color.png"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="absolute left-[-239.47px] top-[-12.39px] flex h-[674.303px] w-[1127.882px] items-center justify-center">
-                                    <div className="flex-none rotate-[3.05deg]">
-                                        <div
-                                            className="relative h-[616.853px] w-[1096.627px]"
-                                            style={{
-                                                WebkitMaskImage: `url("/figma/iphone-mask.svg")`,
-                                                maskImage: `url("/figma/iphone-mask.svg")`,
-                                                WebkitMaskSize: "648.979px 648.979px",
-                                                maskSize: "648.979px 648.979px",
-                                                WebkitMaskPosition: "239.466px 12.389px",
-                                                maskPosition: "239.466px 12.389px",
-                                                WebkitMaskRepeat: "no-repeat",
-                                                maskRepeat: "no-repeat",
-                                            }}
-                                        >
-                                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                                            <img
-                                                alt=""
-                                                className="pointer-events-none absolute inset-0 size-full max-w-none object-cover"
-                                                src="/figma/iphone-frame.png"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Notification Center Stack */}
-                            {!dismissedNotif && (
-                                <div
-                                    className="absolute left-0 top-0 w-full transition-transform duration-300 group-hover:translate-y-[-2px]"
-                                    data-node-id="31:3629"
-                                    data-name="Notifications"
-                                >
-                                    <div className="absolute left-[92.29px] top-[80.1px] h-[77.899px] w-[243.663px] rounded-[12.536px] bg-white/80 shadow-[0px_1.729px_19.02px_1.729px_rgba(99,99,99,0.12)]" />
-                                    <div className="absolute left-[72.65px] top-[67.99px] h-[77.899px] w-[282.934px] rounded-[12.536px] bg-white/80 shadow-[0px_1.729px_19.02px_1.729px_rgba(99,99,99,0.12)]" />
-                                    <div className="absolute left-[61px] top-[55.87px] h-[77.899px] w-[306.242px] rounded-[12.536px] bg-white/85 shadow-[0px_1.729px_19.02px_1.729px_rgba(99,99,99,0.12)] backdrop-blur-sm" />
-
-                                    <p
-                                        className="font-inter absolute left-[70px] top-[33px] text-[12.104px] font-normal leading-normal text-[#bcbcbc] whitespace-nowrap"
-                                        data-node-id="31:3636"
-                                    >
-                                        Notification Center
+                            {/* Card Header */}
+                            <div className="relative z-10 mx-[24px] mt-[22px] flex flex-col gap-[12px]">
+                                <div className="relative flex flex-col items-start gap-[5px] pr-[58px]">
+                                    <h3 className="font-helvetica text-[26px] font-bold leading-normal tracking-[-1.56px] text-[#333333]">
+                                        Dayung
+                                    </h3>
+                                    <p className="font-helvetica text-[13px] font-normal leading-snug tracking-[-0.6px] text-[#909090]">
+                                        Financial &amp; Governance System for HOAs.
                                     </p>
-                                    <p
-                                        className="font-inter absolute left-[351.14px] top-[71.92px] w-[78.71px] -translate-x-full text-right text-[10.375px] font-normal leading-normal text-[#bcbcbc]"
-                                        data-node-id="31:3637"
-                                    >
-                                        42 min ago
-                                    </p>
-                                    <p
-                                        className="font-inter absolute left-[132.6px] top-[71.92px] w-[78.71px] text-[10.375px] font-semibold leading-normal text-black"
-                                        data-node-id="31:3638"
-                                    >
-                                        Chroma™
-                                    </p>
-                                    <p
-                                        className="font-inter absolute left-[132.6px] top-[90.37px] h-[26.086px] w-[182.377px] text-[10.375px] font-normal leading-normal text-[#838383]"
-                                        data-node-id="31:3639"
-                                    >
-                                        You have two new dreams from last night. Want to unroll them?
-                                    </p>
-
-                                    <button
-                                        type="button"
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            setDismissedNotif(true);
-                                        }}
-                                        aria-label="Clear notification"
-                                        className="absolute left-[348.83px] top-[31px] size-[18.384px] cursor-pointer transition-transform hover:scale-110"
-                                        data-node-id="31:3640"
-                                    >
+                                    <div className="absolute right-0 top-0 size-[48px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-105">
                                         {/* eslint-disable-next-line @next/next/no-img-element */}
                                         <img
-                                            alt=""
-                                            className="absolute inset-0 block size-full max-w-none"
-                                            src="/figma/notif-close.svg"
-                                        />
-                                    </button>
-
-                                    <div
-                                        className="absolute left-[73.69px] top-[71.05px] size-[47.551px] rounded-[4.323px]"
-                                        data-node-id="31:3645"
-                                    >
-                                        <div className="pointer-events-none absolute inset-0 rounded-[4.323px] bg-[#d9d9d9]">
-                                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                                            <img
-                                                alt="Chroma"
-                                                className="absolute size-full max-w-none rounded-[4.323px] object-cover"
-                                                src="/figma/chroma-icon.png"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-
-                            {/* Bottom-left Redirection Arrow Button */}
-                            <div
-                                className="absolute left-[19px] top-[423px] size-[70.351px] transition-transform duration-300 group-hover:scale-105"
-                                data-node-id="63:8751"
-                                data-name="Redirection"
-                            >
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                    alt="Open project"
-                                    className="absolute inset-0 block size-full max-w-none"
-                                    src="/figma/redirection.svg"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Project Card 2: iPad Pro Landscape (428 x 513) */}
-                        <div
-                            onClick={() => project2 && setSelectedProject(project2)}
-                            className="bento-card bento-enter stagger-8 group relative h-[513px] w-full max-w-[428px] cursor-pointer overflow-clip rounded-[27px] bg-[#f7f7f9]"
-                            data-node-id="21:3387"
-                        >
-                            <div
-                                className="absolute left-[96px] top-[88px] h-[502.844px] w-[613.295px] transition-transform duration-500 ease-out group-hover:translate-x-[-6px] group-hover:translate-y-[-4px]"
-                                data-node-id="29:3582"
-                                data-name="iPad Pro (Landscape)"
-                            >
-                                <div className="absolute inset-[1.41%_0_0_1%]" data-name="Shadows">
-                                    <div className="absolute inset-[-0.65%_-0.53%]">
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
-                                            alt=""
+                                            alt="View Dayung project"
                                             className="block size-full max-w-none"
-                                            src="/figma/ipad-shadows.svg"
+                                            src="/figma/redirection-56.svg"
                                         />
                                     </div>
                                 </div>
-                                <div
-                                    className="absolute inset-[0.58%_25.07%_30.57%_0.47%] rounded-[20.992px] border-[1.292px] border-[#d7d7d7] bg-black shadow-[6.459px_6.459px_16.148px_0px_rgba(0,0,0,0.35),25.837px_25.837px_48.444px_0px_rgba(0,0,0,0.25)]"
-                                    data-name="Frame"
-                                />
-                                <div
-                                    className="absolute inset-[2.12%_26.33%_32.11%_1.74%] rounded-[14.533px] bg-black"
-                                    data-name="Put Screen In Here"
-                                />
-                                <div
-                                    className="absolute inset-[66.6%_56.13%_33.08%_31.54%] rounded-[32.296px] bg-white"
-                                    data-name="Home Indicator (White)"
-                                />
-                                {/* System Bar */}
-                                <div className="absolute contents inset-[2.89%_27.87%_95.95%_3%]">
-                                    <p className="font-sf absolute inset-[2.89%_93.68%_95.95%_3%] text-[4.844px] font-semibold leading-normal tracking-[-0.0969px] text-white">
-                                        9:41 AM
-                                    </p>
-                                    <p className="font-sf absolute inset-[2.89%_29.07%_95.95%_68.09%] text-center text-[4.844px] font-semibold leading-normal tracking-[-0.0969px] text-white">
-                                        100%
-                                    </p>
-                                    <div className="absolute inset-[3.1%_27.87%_96.17%_70.84%]">
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
-                                            alt=""
-                                            className="absolute inset-0 block size-full max-w-none"
-                                            src="/figma/ipad-battery.svg"
-                                        />
-                                    </div>
-                                    <div className="absolute inset-[3.1%_31.95%_96.19%_67.25%]">
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
-                                            alt=""
-                                            className="absolute inset-0 block size-full max-w-none"
-                                            src="/figma/ipad-wifi.svg"
-                                        />
-                                    </div>
-                                </div>
-                                <div
-                                    className="absolute inset-[2.12%_26.33%_32.11%_1.74%] rounded-[14.533px] mix-blend-screen"
-                                    style={{
-                                        backgroundImage:
-                                            "linear-gradient(160.84323968563336deg, rgba(255, 255, 255, 0.25) 0.67515%, rgba(255, 255, 255, 0) 38.684%)",
-                                    }}
-                                    data-name="Screen Shine"
-                                />
-                                <div className="absolute inset-[34.62%_98.58%_64.61%_0.79%]">
+                                <div className="relative h-px w-full">
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
                                         alt=""
-                                        className="absolute inset-0 block size-full max-w-none"
-                                        src="/figma/ipad-camera.svg"
+                                        className="block w-full max-w-none"
+                                        src="/figma/line-604.svg"
                                     />
                                 </div>
                             </div>
 
-                            {/* Bottom-left Redirection Arrow Button */}
-                            <div
-                                className="absolute left-[28px] top-[423px] size-[70.351px] transition-transform duration-300 group-hover:scale-105"
-                                data-node-id="63:8748"
-                                data-name="Redirection"
-                            >
+                            {/* Dayung MacBook Mockup */}
+                            <div className="absolute left-[74px] top-[148px] h-[330px] w-[440px] transition-transform duration-500 ease-out group-hover:translate-x-[-4px] group-hover:translate-y-[-4px] group-hover:scale-[1.015]">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
-                                    alt="Open project"
-                                    className="absolute inset-0 block size-full max-w-none"
-                                    src="/figma/redirection.svg"
+                                    alt="Dayung Mockup"
+                                    className="block size-full object-contain object-left-bottom"
+                                    src="/figma/dayung-macbook.png"
                                 />
                             </div>
-                        </div>
+
+                            {/* Floating Sticker Badges: "Easy!", "Fast", "Transparent" */}
+                            <div className="absolute left-[56px] top-[252px] z-20 flex items-center justify-center transition-transform duration-500 ease-out group-hover:translate-y-[-5px] group-hover:rotate-[-1deg]">
+                                <div className="flex-none rotate-[-3.88deg]">
+                                    <div className="flex items-start rounded-[8px] bg-[#06a9ab] px-[9px] py-[4px] shadow-[0px_4px_10px_rgba(0,0,0,0.18)]">
+                                        <p className="font-inter text-[22px] font-medium leading-[27px] tracking-[-1.3px] text-[#f7f7f9] whitespace-nowrap">
+                                            Easy!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="absolute left-[10px] top-[256px] z-20 flex items-center justify-center transition-transform duration-500 ease-out group-hover:translate-y-[-7px] group-hover:rotate-[-20deg]">
+                                <div className="flex-none rotate-[-25.51deg]">
+                                    <div className="flex items-start rounded-[8px] bg-[#67e1ec] px-[10px] py-[4.5px] shadow-[0px_12px_9px_rgba(0,0,0,0.15)]">
+                                        <p className="font-inter text-[23px] font-medium leading-[28px] tracking-[-1.4px] text-[#225a5b] whitespace-nowrap">
+                                            Fast
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="absolute left-[18px] top-[288px] z-20 flex items-center justify-center transition-transform duration-500 ease-out group-hover:translate-y-[-3px] group-hover:rotate-[-11deg]">
+                                <div className="flex-none rotate-[-14.08deg]">
+                                    <div
+                                        className="flex items-start rounded-[8px] px-[9.5px] py-[4.5px]"
+                                        style={{
+                                            background:
+                                                "linear-gradient(135deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.42) 100%)",
+                                            backdropFilter: "blur(12px) saturate(180%)",
+                                            WebkitBackdropFilter: "blur(12px) saturate(180%)",
+                                            boxShadow:
+                                                "0px 8px 20px rgba(0,0,0,0.12), inset 0 1px 1px rgba(255,255,255,0.9), 0px 0.5px 1px 0px rgba(0,0,0,0.22)",
+                                        }}
+                                    >
+                                        <p className="font-inter text-[22px] font-medium leading-[27px] tracking-[-1.3px] text-[#737d7e] whitespace-nowrap">
+                                            Transparent
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+
+                        {/* Featured Card 2: AQUILA (428 x 513) */}
+                        <Link
+                            href="/projects/aquila-cyber-security"
+                            className="bento-card bento-enter stagger-8 group relative block h-[513px] w-full max-w-[428px] overflow-clip rounded-[27px] bg-[#f7f7f9] no-underline"
+                        >
+                            {/* Dashed decorative orbit lines */}
+                            <div className="pointer-events-none absolute left-[180px] top-[164px] flex h-[190px] w-[320px] items-center justify-center opacity-75">
+                                <div className="flex-none rotate-[87.16deg]">
+                                    <div className="relative h-[320px] w-[170px]">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img
+                                            alt=""
+                                            className="block size-full max-w-none"
+                                            src="/figma/aquila-arc-1.png"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="pointer-events-none absolute left-[-105px] top-[132px] flex h-[170px] w-[320px] items-center justify-center opacity-75">
+                                <div className="flex-none -rotate-90">
+                                    <div className="relative h-[320px] w-[170px]">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img
+                                            alt=""
+                                            className="block size-full max-w-none"
+                                            src="/figma/aquila-arc-3.png"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Card Header */}
+                            <div className="relative z-10 mx-[24px] mt-[22px] flex flex-col gap-[12px]">
+                                <div className="relative flex flex-col items-start gap-[5px] pr-[58px]">
+                                    <h3 className="font-helvetica text-[26px] font-bold leading-normal tracking-[-1.56px] text-[#333333]">
+                                        AQUILA
+                                    </h3>
+                                    <p className="font-helvetica text-[13px] font-normal leading-snug tracking-[-0.6px] text-[#909090]">
+                                        All-in-One Cyber Security Platform
+                                    </p>
+                                    <div className="absolute right-0 top-0 size-[48px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-105">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img
+                                            alt="View AQUILA project"
+                                            className="block size-full max-w-none"
+                                            src="/figma/redirection-56.svg"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="relative h-px w-full">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                        alt=""
+                                        className="block w-full max-w-none"
+                                        src="/figma/line-604.svg"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* MacBook Mockup */}
+                            <div className="absolute left-[18px] top-[186px] h-[258px] w-[392px] transition-transform duration-500 ease-out group-hover:translate-y-[-5px] group-hover:scale-[1.015]">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    alt="AQUILA Dashboard Mockup"
+                                    className="block size-full object-contain"
+                                    src="/figma/aquila-macbook.png"
+                                />
+                            </div>
+
+                            {/* Floating Sticker Badges: "All-in-One" & "Security" */}
+                            <div className="absolute right-[24px] top-[236px] z-20 flex items-center justify-center transition-transform duration-500 ease-out group-hover:translate-y-[-6px] group-hover:rotate-[-2deg]">
+                                <div className="flex-none rotate-[-5.54deg]">
+                                    <div className="flex items-start rounded-[8px] bg-[#f7ff60] px-[9.5px] py-[4.5px] shadow-[0px_11px_9px_rgba(0,0,0,0.15)]">
+                                        <p className="font-inter text-[22px] font-medium leading-[27px] tracking-[-1.3px] text-[#363636] whitespace-nowrap">
+                                            All-in-One
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="absolute right-[16px] top-[274px] z-20 flex items-center justify-center transition-transform duration-500 ease-out group-hover:translate-y-[-4px] group-hover:rotate-[4deg]">
+                                <div className="flex-none rotate-[2.39deg]">
+                                    <div className="flex items-start rounded-[8px] bg-[#ff6e6e] px-[9.5px] py-[4.5px] shadow-[0px_11px_9px_rgba(0,0,0,0.15)]">
+                                        <p className="font-inter text-[22px] font-medium leading-[27px] tracking-[-1.3px] text-[#500707] whitespace-nowrap">
+                                            Security
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
                     </div>
 
-                    {/* Bottom Wide Project Card 3: Centered Logomark (875 x 513) */}
-                    <div
-                        onClick={() => project3 && setSelectedProject(project3)}
-                        className="bento-card bento-enter stagger-9 group relative h-[513px] w-full max-w-[875px] cursor-pointer overflow-clip rounded-[27px] bg-[#f7f7f9]"
-                        data-node-id="63:8944"
+                    {/* Bottom Wide Featured Card 3: TripleWisk (875 x 513) */}
+                    <Link
+                        href="/projects/triplewisk"
+                        className="bento-card bento-enter stagger-9 group relative block h-[513px] w-full max-w-[875px] overflow-clip rounded-[27px] bg-[#f7f7f9] no-underline"
                     >
+                        {/* Subtle warm golden-bakery ambient glow on hover */}
                         <div
-                            className="absolute left-[calc(50%+0.5px)] top-[calc(50%+0.5px)] h-[170px] w-[264px] -translate-x-1/2 -translate-y-1/2 overflow-clip transition-transform duration-500 ease-out group-hover:scale-105"
-                            data-node-id="63:8945"
-                            data-name="Logo"
-                        >
-                            <div className="absolute inset-[1.05%_1.04%_2.46%_0.09%]" data-node-id="63:8946">
+                            aria-hidden
+                            className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
+                            style={{
+                                background:
+                                    "radial-gradient(circle at 50% 62%, rgba(229, 165, 75, 0.22) 0%, rgba(180, 118, 38, 0.06) 48%, transparent 72%)",
+                            }}
+                        />
+
+                        {/* Header */}
+                        <div className="relative z-10 mx-[28px] mt-[23px] flex flex-col gap-[14px]">
+                            <div className="relative flex flex-col items-start gap-[6px]">
+                                <h3 className="font-helvetica text-[28px] font-bold leading-normal tracking-[-1.68px] text-[#333333] transition-colors duration-300 group-hover:text-[#d69338]">
+                                    TripleWisk
+                                </h3>
+                                <p className="font-helvetica text-[14px] font-normal leading-normal tracking-[-0.84px] text-[#909090]">
+                                    Home-made fresh goods.
+                                </p>
+                                <div className="absolute right-0 top-0 size-[56px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-105">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                        alt="View TripleWisk project"
+                                        className="block size-full max-w-none"
+                                        src="/figma/redirection-56.svg"
+                                    />
+                                </div>
+                            </div>
+                            <div className="relative h-px w-full">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
-                                    alt="Project Logomark"
-                                    className="absolute inset-0 block size-full max-w-none"
-                                    src="/figma/logomark.svg"
+                                    alt=""
+                                    className="block w-full max-w-none"
+                                    src="/figma/line-604.svg"
                                 />
                             </div>
                         </div>
 
-                        <div
-                            className="absolute left-[20px] top-[423px] size-[70.351px] transition-transform duration-300 group-hover:scale-105"
-                            data-node-id="63:8948"
-                            data-name="Redirection"
-                        >
+                        {/* TripleWisk Logo Container: Default Muted Taupe -> Animated Original Golden Honey (#E5A54B) on Hover */}
+                        <div className="absolute left-1/2 top-[168px] h-[230px] w-[334px] -translate-x-1/2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-[8px] group-hover:rotate-[-2deg] group-hover:scale-[1.07]">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
-                                alt="Open project"
-                                className="absolute inset-0 block size-full max-w-none"
-                                src="/figma/redirection.svg"
+                                alt="TripleWisk Logo"
+                                width={334}
+                                height={230}
+                                src="/figma/triplewisk-logo-gray.png"
+                                className="absolute inset-0 block size-full max-w-none transition-opacity duration-500 ease-out group-hover:opacity-0"
+                            />
+
+                            <svg className="pointer-events-none absolute size-0" aria-hidden>
+                                <filter id="home-triplewisk-solid-color">
+                                    <feColorMatrix
+                                        type="matrix"
+                                        values="
+                                            0 0 0 0 0.898
+                                            0 0 0 0 0.647
+                                            0 0 0 0 0.294
+                                            0 0 0 4.8 0"
+                                    />
+                                </filter>
+                            </svg>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                alt="TripleWisk Colored Logo"
+                                width={334}
+                                height={230}
+                                src="/figma/triplewisk-logo-gray.png"
+                                style={{ filter: "url(#home-triplewisk-solid-color)" }}
+                                className="absolute inset-0 block size-full max-w-none opacity-0 drop-shadow-[0_14px_26px_rgba(229,165,75,0.34)] transition-opacity duration-500 ease-out group-hover:opacity-100"
                             />
                         </div>
-                    </div>
+                    </Link>
                 </div>
             </div>
-
-            {/* Project Case Study Modal when any project card is clicked */}
-            {selectedProject && (
-                <ProjectModal
-                    project={selectedProject}
-                    onClose={() => setSelectedProject(null)}
-                />
-            )}
         </section>
     );
 }

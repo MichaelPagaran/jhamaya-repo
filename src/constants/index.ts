@@ -1,17 +1,17 @@
 import { NavLink } from "@/types";
 
 export const SITE_META = {
-    name: "Jam — Product & Multidisciplinary Designer",
+    name: "Jam | Product & Multidisciplinary Designer",
     description:
         "Designer based in the Philippines crafting clear, thoughtful digital experiences across product design, systems, and visual craft.",
     url: "https://yourportfolio.com",
 } as const;
 
 export const NAV_LINKS: NavLink[] = [
-    { label: "Home", href: "#home" },
-    { label: "Projects", href: "#projects" },
-    { label: "Stack", href: "#stack" },
-    { label: "Recommendations", href: "#recommendations" },
+    { label: "Home", href: "/" },
+    { label: "Projects", href: "/projects" },
+    { label: "Stack", href: "/#stack" },
+    { label: "Recommendations", href: "/#recommendations" },
 ];
 
 export const SOCIAL_LINKS = [
