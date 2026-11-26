@@ -127,11 +127,11 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                                 </p>
 
                                 <p className="m-0">
-                                    {`when i design, i start with the WHY. if we don't figure that out first, the WHAT becomes guessing. 🤓☝️`}
+                                    {`when i design, i start with the WHY. if we don't figure that out first, the WHAT becomes guessing and i think we should design things that handle the stuff we don't enjoy, and make the stuff we love even better.`}
                                 </p>
 
                                 <p className="m-0">
-                                    {`i think we should design things that handle the stuff we don't enjoy, and make the stuff we love even better.`}
+                                    {`i'm also a leader, and my approach is heavily rooted in empathy. people love to say that being "soft" is a leadership weakness, but i see it as my superpower. sure, there's a risk people might abuse it, but i'm not worried because if you trust your team, they'll trust you right back. (my old colleagues are literally still my friends today. love you guys!)`}
                                 </p>
 
                                 <p className="m-0">wanna make something together? hmu!</p>
@@ -139,10 +139,9 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                                 <div className="pt-[12px]">
                                     <a
                                         href="mailto:jhamayasantiago@gmail.com"
-                                        className="inline-flex items-center text-[18px] leading-normal no-underline transition-opacity hover:opacity-75"
+                                        className="inline-flex items-center text-[18px] leading-normal italic text-[#41a0ff] underline decoration-solid [text-underline-position:from-font] transition-opacity hover:opacity-75"
                                     >
-                                        <span className="italic text-[#41a0ff]">✉️ let’s ta</span>
-                                        <span className="text-[#909090]">lk</span>
+                                        ✉️ let’s talk
                                     </a>
                                 </div>
                             </div>
@@ -185,29 +184,29 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                         data-name="Stack"
                     >
                         {/* Header */}
-                        <div className="flex w-full flex-col items-start gap-[10px]" data-node-id="63:8959">
-                            <div className="flex w-full flex-col items-start gap-[14px]" data-node-id="63:8960">
+                        <div className="flex w-full flex-col gap-[12px]" data-node-id="63:8959">
+                            <div className="flex w-full flex-col items-start gap-[5px]" data-node-id="63:8960">
                                 <h2
-                                    className="font-helvetica text-[34px] font-bold leading-normal tracking-[-2.04px] text-[#333333] whitespace-nowrap"
+                                    className="font-helvetica text-[26px] font-bold leading-normal tracking-[-1.56px] text-[#333333] whitespace-nowrap"
                                     data-node-id="63:8961"
                                 >
                                     Tools
                                 </h2>
-                                <div className="relative h-px w-full" data-node-id="63:8962">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                        alt=""
-                                        className="block w-full max-w-none"
-                                        src="/figma/line-divider.svg"
-                                    />
-                                </div>
+                                <p
+                                    className="font-helvetica w-full text-[13px] font-normal leading-snug tracking-[-0.6px] text-[#909090]"
+                                    data-node-id="63:8963"
+                                >
+                                    these are the tool i use in my design process.
+                                </p>
                             </div>
-                            <p
-                                className="font-helvetica w-full text-[20px] font-normal leading-normal tracking-[-1.2px] text-[#909090]"
-                                data-node-id="63:8963"
-                            >
-                                these are the tool i use in my design process.
-                            </p>
+                            <div className="relative h-px w-full" data-node-id="63:8962">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    alt=""
+                                    className="block w-full max-w-none"
+                                    src="/figma/line-604.svg"
+                                />
+                            </div>
                         </div>
 
                         {/* Group 1: Design & Prototyping */}
@@ -248,6 +247,17 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                                         src="/figma/tool-xd.svg"
                                     />
                                 </div>
+                                <div
+                                    className="relative size-[55px] shrink-0 transition-transform hover:scale-105"
+                                    title="Canva"
+                                >
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                        alt="Canva"
+                                        className="absolute inset-0 block size-full max-w-none"
+                                        src="/figma/tool-canva.svg"
+                                    />
+                                </div>
                             </div>
                         </div>
 
@@ -285,6 +295,17 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                                         alt="Adobe Illustrator"
                                         className="absolute inset-0 block size-full max-w-none"
                                         src="/figma/tool-ai.svg"
+                                    />
+                                </div>
+                                <div
+                                    className="relative size-[55px] shrink-0 transition-transform hover:scale-105"
+                                    title="Affinity"
+                                >
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                        alt="Affinity"
+                                        className="absolute inset-0 block size-full max-w-none"
+                                        src="/figma/tool-affinity.svg"
                                     />
                                 </div>
                                 <div
@@ -367,6 +388,17 @@ export default function BentoHome({ projects: _projects }: BentoHomeProps) {
                                             src="/figma/tool-capcut.png"
                                         />
                                     </div>
+                                </div>
+                                <div
+                                    className="relative size-[55px] shrink-0 transition-transform hover:scale-105"
+                                    title="Higgsfield"
+                                >
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                        alt="Higgsfield"
+                                        className="absolute inset-0 block size-full max-w-none"
+                                        src="/figma/tool-higgsfield.svg"
+                                    />
                                 </div>
                             </div>
                         </div>
