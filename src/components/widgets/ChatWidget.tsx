@@ -236,7 +236,7 @@ function generateConversationalAnswer(
         }
         if (lastTopic === "tools") {
             return {
-                text: "out of all of them, Figma is definitely my daily home base for UI/UX and design systems, and then i jump into Photoshop, Illustrator, Aseprite, or After Effects whenever a project needs custom visuals or motion! 🛠️",
+                text: "out of all of them, Figma is definitely my daily home base for UI/UX and design systems, and then i jump into Affinity, Photoshop, Illustrator, Canva, Aseprite, After Effects, or Higgsfield whenever a project needs custom visuals or motion! 🛠️",
                 nextTopic: "general",
             };
         }
@@ -336,18 +336,23 @@ function generateConversationalAnswer(
         q.includes("stack") ||
         q.includes("software") ||
         q.includes("figma") ||
+        q.includes("canva") ||
+        q.includes("affinity") ||
+        q.includes("higgsfield") ||
         q.includes("adobe") ||
         q.includes("photoshop") ||
         q.includes("illustrator") ||
         q.includes("aseprite") ||
+        q.includes("ibispaint") ||
         q.includes("after effects") ||
         q.includes("premiere") ||
         q.includes("capcut") ||
         q.includes("jira") ||
-        q.includes("trello")
+        q.includes("trello") ||
+        q.includes("openproject")
     ) {
         return {
-            text: "since i do a lot of different design stuff, my toolkit is pretty wide! i use Figma & Adobe XD for product design, Photoshop, Illustrator, Aseprite & ibisPaint for illustration, After Effects, Premiere Pro & CapCut for motion/video, plus Jira, Trello & OpenProject to stay synced with devs 🛠️",
+            text: "since i do a lot of different design stuff, my toolkit is pretty wide! i use Figma, Adobe XD & Canva for design/prototyping, Photoshop, Illustrator, Affinity, Aseprite & ibisPaint for illustration/editing, After Effects, Premiere Pro, CapCut & Higgsfield for motion/video, plus Jira, Trello & OpenProject to stay synced with devs 🛠️",
             nextTopic: "tools",
         };
     }
@@ -366,7 +371,23 @@ function generateConversationalAnswer(
         };
     }
 
-    // ─── H. Design Process / Philosophy / Why ───
+    // ─── H. Leadership / Empathy / Team ───
+    if (
+        q.includes("leader") ||
+        q.includes("leadership") ||
+        q.includes("empathy") ||
+        q.includes("soft") ||
+        q.includes("superpower") ||
+        q.includes("colleague") ||
+        q.includes("manage")
+    ) {
+        return {
+            text: "my leadership style is heavily rooted in empathy! people sometimes say being 'soft' is a weakness, but i see it as my superpower. if you trust your team, they'll trust you right back (my old colleagues are literally still my friends today 😄)",
+            nextTopic: "philosophy",
+        };
+    }
+
+    // ─── H2. Design Process / Philosophy / Why ───
     if (
         q.includes("process") ||
         q.includes("philosophy") ||
